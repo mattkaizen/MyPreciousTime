@@ -19,8 +19,18 @@ public class GameManager : MonoBehaviour
     [Header("Animator del menu de opciones ")]
     [SerializeField] Animator menuOpcionesAnim;
 
+    [Header("Animator del panel inicio nivel ")]
+    [SerializeField] Animator panelInicioNivelAnim;
+
+    [Header("Animator del panel cargar proxNivel ")]
+    [SerializeField] Animator panelCargarEscenaAnim;
+
+    [Header("Animator de la Camara ")]
+    [SerializeField] Animator cameraAnim;
+
     private PlayerCollision playerCollision;
     private PlayerAnimator playerAnim;
+    private AudioController audioController;
 
     private int numeroDeNivel;
     private int numeroDeFase;
@@ -40,10 +50,11 @@ public class GameManager : MonoBehaviour
     {
         playerCollision = FindObjectOfType<PlayerCollision>();
         playerAnim = FindObjectOfType<PlayerAnimator>();
+        audioController = FindObjectOfType<AudioController>();
     }
     private void Start()
     {
-        juegoActivo = true;
+        ActivarPanelDesaparecer();
     }
 
     private void Update()
@@ -52,9 +63,10 @@ public class GameManager : MonoBehaviour
         CerrarMenuOpcionesTecla();
         ConsultarNivelYFase();
         RastrearMuerteJugador();
+        IrSiguienteEscena();
     }
 
-    public void PasarASiguienteNivel()
+    public void PasarASiguienteNivel() //Se reproduce al final de panel cargar escena
     {
         switch (numeroDeNivel)
         {
@@ -124,10 +136,27 @@ public class GameManager : MonoBehaviour
                 numeroDeFase = 3;
                 numeroDeEscena = 4;
                 break;
+
+            // Escena de indice 7, 8, 9, es Nivel 3
+            case 7:
+                numeroDeNivel = 3;
+                numeroDeFase = 1;
+                numeroDeEscena = 7;
+                break;
+            case 8:
+                numeroDeNivel = 3;
+                numeroDeFase = 2;
+                numeroDeEscena = 7;
+                break;
+            case 9:
+                numeroDeNivel = 3;
+                numeroDeFase = 3;
+                numeroDeEscena = 7;
+                break;
         }
     }
 
-    public void VolverAPrimeraFaseDelNivel()
+    public void VolverAPrimeraFaseDelNivel() //Se ejecuta al final de la animacion de muerte (evento)
     {
         if (numeroDeNivel == 1)
         {
@@ -137,6 +166,17 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(numeroDeEscena); //Carga el nivel 2, fase 1
         }
+    }
+
+    public void ActivarTemblorCamara() //Se activa al comienzo de la animacion de muerte
+    {
+        //Activar animacion de temblor de camara
+        cameraAnim.SetBool("Temblor", true);
+    }
+
+    public void DesactivarTemblorCamara() //Se activa final de anim de temblor, aca se debe activar panel de perdida
+    {
+        cameraAnim.SetBool("Temblor", false);
     }
 
     private void RastrearMuerteJugador()
@@ -151,8 +191,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Cargar menu 
 
+    public void CargarNuevaEscena() //Debe estar al final de la anim del panel cargar menu
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
+    public void IniciarJuego() //Se ejecuta casi al final de la animacion del desaparecer panelInicioNivel
+    {
+        juegoActivo = true;
+    }
+
+    public void ActivarPanelDesaparecer() //El panel de inicio de nivel
+    {
+        panelInicioNivelAnim.SetBool("activarPanel", true);
+    }
+
+    public void ActivarPanelCargarNivel() //El panel al cargar una escena
+    {
+        panelCargarEscenaAnim.SetBool("activarPanel", true);
+    }
+
+    public void IrSiguienteEscena() //Se revisa en update
+    {
+        if (audioController.TerminoSonidos)
+        {
+            ActivarPanelCargarNivel();
+        }
+    }
 
     //MENU PAUSA
     //-----------------------------------------------------------------------------------------------------------------

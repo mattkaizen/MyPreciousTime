@@ -18,9 +18,13 @@ public class PlatformController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         platformAnim = GetComponent<Animator>();
     }
-    private void Start()
+
+    private void Update()
     {
-        StartCoroutine(ActivarPlataforma());
+        if(!plataformaActiva)
+        {
+            StartCoroutine(ActivarPlataforma());
+        }
     }
     void ElegirEstado()
     {
@@ -52,6 +56,7 @@ public class PlatformController : MonoBehaviour
     {
         while (gameManager.JuegoActivo)
         {
+            plataformaActiva = true;
             yield return new WaitForSeconds(timeToActivePlatform);
             ElegirEstado();
         }

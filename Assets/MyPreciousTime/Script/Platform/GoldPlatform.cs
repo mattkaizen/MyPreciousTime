@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class GoldPlatform : MonoBehaviour
 {
-
-    private bool terminoAnim;
     private GameManager gameManager;
+
+    private bool activarVictoria;
+    public bool ActivarVictoria { get => activarVictoria; }
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
     }
-    public void ActivarAnimVictoria()
+    public void TocoGoldPlatform() //Activar sonido de victoria
     {
-        gameManager.PasarASiguienteNivel();
+        activarVictoria = true;
+        //audioController.ReproducirSonidoVictoria();
+        //gameManager.ActivarPanelCargarNivel();
     }
 }

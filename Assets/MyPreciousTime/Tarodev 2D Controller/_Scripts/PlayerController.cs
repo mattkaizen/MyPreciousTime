@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        Invoke(nameof(Activate), 0.5f);
+        Invoke(nameof(Activate), 0.25f); //Tiempo en que se activa la caida del personaje
     }
     //void Awake() => Invoke(nameof(Activate), 0.5f);
     void Activate() => _active = true;

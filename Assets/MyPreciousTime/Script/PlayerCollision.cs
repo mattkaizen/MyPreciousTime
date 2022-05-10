@@ -24,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (collision.CompareTag("Meta"))
         {
-            collision.gameObject.GetComponentInParent<GoldPlatform>().ActivarAnimVictoria();
+            collision.gameObject.GetComponentInParent<GoldPlatform>().TocoGoldPlatform();
         }
     }
 
@@ -38,7 +38,7 @@ public class PlayerCollision : MonoBehaviour
 
         else if (collision.CompareTag("Meta"))
         {
-            collision.gameObject.GetComponentInParent<GoldPlatform>().ActivarAnimVictoria();
+            collision.gameObject.GetComponentInParent<GoldPlatform>().TocoGoldPlatform();
         }
     }
 

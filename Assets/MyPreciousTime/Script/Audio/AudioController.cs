@@ -17,21 +17,35 @@ public class AudioController : MonoBehaviour
     [Header("AudioSources")]
     [SerializeField] AudioSource musicaAudioSource;
     [SerializeField] AudioSource musicaVictoriaAS;
+    [SerializeField] AudioSource sonidoVictoriaAS;
+    [SerializeField] AudioSource sonidoGolpeAS;
 
     [Header("Audioclips")]
-    [SerializeField] AudioClip musicaNivel1AudioClip;
+    [SerializeField] AudioClip musicaNivelAudioClip;
     [SerializeField] AudioClip musicaVictoriaAudioClip;
+    [SerializeField] AudioClip sonidoVictoriaAudioClip;
+    [SerializeField] AudioClip sonidoGolpeAudioClip;
 
     [Header("Velocidad a disminuir la musica")]
     [SerializeField] float velocidadDisminuidor; //0.05
-    [SerializeField] float velCorrutina; //0.1
+    [SerializeField] float velCorrutinaApagar; //0.1
+
+    [Header("Velocidad a aumentar la musica")]
+    [SerializeField] float velocidadAumentador; //0.05
+    [SerializeField] float velCorrutinaIniciar; //0.1
 
 
     private GameManager gameManager;
+    private GoldPlatform goldPlatfom;
 
     private bool musicaIniciada;
     private bool musicaPausada;
     private bool musicaVictoria;
+    private bool sonidoVictoria;
+    private bool sonidoGolpeJefe;
+    private bool terminoSonidos;
+
+    private bool primeraReproduccionMusica;
 
     private float velocidad;
 
@@ -42,9 +56,12 @@ public class AudioController : MonoBehaviour
     private string parametroFx;
     private string parametroMusica;
 
+    public bool TerminoSonidos { get => terminoSonidos; }
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        goldPlatfom = FindObjectOfType<GoldPlatform>();
         velocidad = 30.0f;
         parametroMaster = "MasterVolume";
         parametroMusica = "MusicaVolume";
@@ -60,7 +77,9 @@ public class AudioController : MonoBehaviour
     void Update()
     {
         IniciarMusica();
-        ReproducirMusicaVictoria();
+        ReproducirSonidoVictoria();
+        RastrearSonidoGolpeJefe();
+        //ReproducirMusicaVictoria();
     }
 
     private void OnDisable()
@@ -98,7 +117,13 @@ public class AudioController : MonoBehaviour
     {
         if (!musicaAudioSource.isPlaying && gameManager.JuegoActivo && !musicaPausada)
         {
-            musicaAudioSource.PlayOneShot(musicaNivel1AudioClip, 0.8f);
+            musicaAudioSource.PlayOneShot(musicaNivelAudioClip, 0.8f);
+
+            if (!primeraReproduccionMusica)
+            {
+                IniciarCorrutinaAparecerMusica();
+                //Armar codigo de control que inicie 1 corrutina al principio del nivel
+            }
         }
     }
 
@@ -127,23 +152,66 @@ public class AudioController : MonoBehaviour
         musicaVictoria = true;
     }
 
+    //------------------------------------------------
+
+    public void RastrearSonidoGolpeJefe()
+    {
+        if (sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
+        {
+            terminoSonidos = true;
+        }
+    }
+    public void ReproducirSonidoGolpeJefe() //Se reproduce sonido de golpe cuando termina de reproducir el sonido de victoria
+    {
+        if (sonidoVictoria && !sonidoVictoriaAS.isPlaying && !sonidoGolpeJefe)
+        {
+            sonidoGolpeAS.PlayOneShot(sonidoGolpeAudioClip);
+            sonidoGolpeJefe = true;
+        }
+    }
+
+    public void ReproducirSonidoVictoria() //Se reproduce en el update
+    {
+        if (goldPlatfom.ActivarVictoria)
+        {
+            if (!sonidoVictoria && !sonidoVictoriaAS.isPlaying)
+            {
+                sonidoVictoria = true;
+                sonidoVictoriaAS.PlayOneShot(sonidoVictoriaAudioClip);
+            }
+            ReproducirSonidoGolpeJefe();
+        }
+    }
+
     public void IniciarCorrutinaApagarMusica()
     {
         StartCoroutine(ApagarMusica());
     }
 
+    public void IniciarCorrutinaAparecerMusica()
+    {
+        if (!musicaIniciada)
+        {
+            musicaIniciada = true;
+            StartCoroutine(AparecerMusica());
+        }
+    }
+    IEnumerator AparecerMusica()
+    {
+        primeraReproduccionMusica = true;
+        musicaAudioSource.volume = 0.01f;
+        while (musicaAudioSource.volume < 0.8f)
+        {
+            musicaAudioSource.volume += velocidadAumentador;
+            yield return new WaitForSeconds(velCorrutinaIniciar);
+        }
+    }
     IEnumerator ApagarMusica()
     {
         while (musicaAudioSource.volume > 0.01f)
         {
             musicaAudioSource.volume -= velocidadDisminuidor;
-            yield return new WaitForSeconds(velCorrutina);
+            yield return new WaitForSeconds(velCorrutinaApagar);
         }
     }
-
-    //public void ModificarValorFxSlider(float value)
-    //{
-    //    audioMixer.SetFloat(parametroMusica, Mathf.Log10(value) * velocidad);
-    //}
-
 }
