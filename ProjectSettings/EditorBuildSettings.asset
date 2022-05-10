@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Nivel 1.unity
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Menu Principal.unity
+    guid: 65a99db593d08d744990ff001d80736e
+  - enabled: 1
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 2.unity
+    guid: e62c46ddee32fab4a9cd85a095d07e3f
+  - enabled: 1
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 3.unity
+    guid: 5f7913abeb155d24eb73bca4fd217d54
+  - enabled: 1
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 2 Fase 1.unity
+    guid: 2cea748236673304a9a5569063c79c5f
   m_configObjects: {}
