@@ -22,7 +22,7 @@ public class JugadorController : MonoBehaviour
     [Header("Curacion que recibe por bonus el jugador")]
     [SerializeField] float curacionBonus;
 
-    private GameManager gameManager;
+    private GameManager2 gameManager;
     private EspadaController espadaController;
 
     private KeyCode botonAtaque1;
@@ -41,7 +41,7 @@ public class JugadorController : MonoBehaviour
     public float DmgRecibido { get => dmgRecibido; set => dmgRecibido = value; }
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager2>();
         espadaController = FindObjectOfType<EspadaController>();
 
         botonAtaque1 = KeyCode.A;

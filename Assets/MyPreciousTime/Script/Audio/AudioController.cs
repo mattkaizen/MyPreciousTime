@@ -1,7 +1,7 @@
 using System.Collections;
-using UnityEngine.UI;
-using UnityEngine.Audio;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
 {
@@ -116,7 +116,7 @@ public class AudioController : MonoBehaviour
 
     void ReproducirMusicaVictoria()
     {
-        if (musicaVictoria && !musicaVictoriaAS.isPlaying)
+        if(musicaVictoria && !musicaVictoriaAS.isPlaying)
         {
             musicaVictoriaAS.PlayOneShot(musicaVictoriaAudioClip);
         }
@@ -140,4 +140,10 @@ public class AudioController : MonoBehaviour
             yield return new WaitForSeconds(velCorrutina);
         }
     }
+
+    //public void ModificarValorFxSlider(float value)
+    //{
+    //    audioMixer.SetFloat(parametroMusica, Mathf.Log10(value) * velocidad);
+    //}
+
 }

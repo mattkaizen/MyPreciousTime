@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager2 : MonoBehaviour
 {
     [Header("Tiempo antes de que cargue la escena")]
     [SerializeField] float tiempoReinicio;

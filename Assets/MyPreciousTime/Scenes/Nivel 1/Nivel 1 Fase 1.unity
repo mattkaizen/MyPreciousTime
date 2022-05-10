@@ -555,7 +555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &222967123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266180559}
   - component: {fileID: 266180561}
-  - component: {fileID: 266180560}
+  - component: {fileID: 266180562}
   m_Layer: 5
   m_Name: MenuOptions
   m_TagString: Untagged
@@ -623,7 +623,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &266180560
+--- !u!95 &266180561
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266180558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c87cd62f8b2a05418f29c628ef08e9a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &266180562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -632,13 +652,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 266180558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   miEvento:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147304700}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ActivarBotonesMenuBack
         m_Mode: 1
@@ -652,19 +672,7 @@ MonoBehaviour:
         m_CallState: 2
   OtroEvento:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActivarBoolMenuAbierto
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   tecerEvento:
     m_PersistentCalls:
       m_Calls: []
@@ -686,26 +694,6 @@ MonoBehaviour:
   novenoEvento:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &266180561
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266180558}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9c87cd62f8b2a05418f29c628ef08e9a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &274349520
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +743,7 @@ GameObject:
   - component: {fileID: 315165021}
   - component: {fileID: 315165020}
   - component: {fileID: 315165019}
-  - component: {fileID: 315165018}
+  - component: {fileID: 315165022}
   m_Layer: 5
   m_Name: DerrotaText
   m_TagString: Untagged
@@ -783,57 +771,6 @@ RectTransform:
   m_AnchoredPosition: {x: -960, y: -540}
   m_SizeDelta: {x: 1147.0598, y: 203.4203}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &315165018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315165016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miEvento:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActivarBotonDerrota
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OtroEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  tecerEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  cuartoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  quintaEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  sextoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  septimoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  octavoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  novenoEvento:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!95 &315165019
 Animator:
   serializedVersion: 4
@@ -896,6 +833,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315165016}
   m_CullTransparentMesh: 1
+--- !u!114 &315165022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315165016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  OtroEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  tecerEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  cuartoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  quintaEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  sextoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  septimoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  octavoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  novenoEvento:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &316692578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1407,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1885645471}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: ModificarValorSoundEffect
         m_Mode: 0
@@ -1631,7 +1607,7 @@ GameObject:
   - component: {fileID: 624542408}
   - component: {fileID: 624542407}
   - component: {fileID: 624542406}
-  - component: {fileID: 624542405}
+  - component: {fileID: 624542410}
   - component: {fileID: 624542404}
   m_Layer: 5
   m_Name: OptionsButton
@@ -1682,57 +1658,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &624542405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624542402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miEvento:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActivarBotonDerrota
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 624542404}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OtroEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  tecerEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  cuartoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  quintaEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  sextoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  septimoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  octavoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  novenoEvento:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &624542406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,6 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d626c29c6831f4db7be0ceae5992cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonAnimator: {fileID: 624542404}
 --- !u!114 &624542407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,7 +1715,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147304700}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ActivarMenuOpciones
         m_Mode: 1
@@ -1801,7 +1727,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147304700}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: IdentificarBoton
         m_Mode: 3
@@ -1851,6 +1777,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624542402}
   m_CullTransparentMesh: 1
+--- !u!114 &624542410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624542402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miEvento:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1147304700}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ActivarBotonDerrota
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 624542404}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OtroEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  tecerEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  cuartoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  quintaEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  sextoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  septimoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  octavoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  novenoEvento:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &672261427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2207,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1885645471}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: ModificarValorMasterSlider
         m_Mode: 0
@@ -2986,6 +2963,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1591e2967032b17488e12c1c79280650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelAnim: {fileID: 924813689}
+  botonRetryPausa: {fileID: 1549500398}
+  botonOptionsPausa: {fileID: 624542404}
+  botonMenuPausa: {fileID: 1228476505}
+  panelCargarMenu: {fileID: 1608529756}
+  canvasMenuPausa: {fileID: 1253995222}
+  menuOpcionesAnim: {fileID: 266180561}
 --- !u!4 &1147304701
 Transform:
   m_ObjectHideFlags: 0
@@ -3014,7 +2998,7 @@ GameObject:
   - component: {fileID: 1188428945}
   - component: {fileID: 1188428944}
   - component: {fileID: 1188428943}
-  - component: {fileID: 1188428942}
+  - component: {fileID: 1188428947}
   - component: {fileID: 1188428941}
   m_Layer: 5
   m_Name: BackButton
@@ -3065,57 +3049,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1188428942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188428939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miEvento:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActivarBotonDerrota
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1188428941}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OtroEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  tecerEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  cuartoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  quintaEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  sextoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  septimoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  octavoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  novenoEvento:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1188428943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,6 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d626c29c6831f4db7be0ceae5992cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonAnimator: {fileID: 1188428941}
 --- !u!114 &1188428944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3172,7 +3106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147304700}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: DesactivarMenuOpciones
         m_Mode: 1
@@ -3222,6 +3156,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188428939}
   m_CullTransparentMesh: 1
+--- !u!114 &1188428947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188428939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  OtroEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  tecerEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  cuartoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  quintaEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  sextoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  septimoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  octavoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  novenoEvento:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1191918149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3286,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1885645471}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: ModificarValorMusicaSlider
         m_Mode: 0
@@ -3359,7 +3332,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3415,7 +3388,7 @@ GameObject:
   - component: {fileID: 1228476507}
   - component: {fileID: 1228476506}
   - component: {fileID: 1228476505}
-  - component: {fileID: 1228476504}
+  - component: {fileID: 1228476510}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -3445,57 +3418,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -398}
   m_SizeDelta: {x: 389.04, y: 82.6829}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1228476504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228476502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miEvento:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActivarBotonDerrota
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1228476505}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OtroEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  tecerEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  cuartoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  quintaEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  sextoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  septimoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  octavoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  novenoEvento:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!95 &1228476505
 Animator:
   serializedVersion: 4
@@ -3528,6 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d626c29c6831f4db7be0ceae5992cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonAnimator: {fileID: 1228476505}
 --- !u!114 &1228476507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3572,7 +3495,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147304700}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ActivarPanelCargarMenu
         m_Mode: 1
@@ -3622,6 +3545,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228476502}
   m_CullTransparentMesh: 1
+--- !u!114 &1228476510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228476502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miEvento:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1147304700}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ActivarBotonDerrota
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1228476505}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OtroEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  tecerEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  cuartoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  quintaEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  sextoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  septimoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  octavoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  novenoEvento:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1236216899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1253995223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,8 +4037,8 @@ RectTransform:
   m_Father: {fileID: 468504560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4124,7 +4098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1464861119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4377,8 +4351,8 @@ GameObject:
   - component: {fileID: 1549500403}
   - component: {fileID: 1549500402}
   - component: {fileID: 1549500401}
-  - component: {fileID: 1549500400}
-  - component: {fileID: 1549500399}
+  - component: {fileID: 1549500405}
+  - component: {fileID: 1549500404}
   - component: {fileID: 1549500398}
   m_Layer: 5
   m_Name: ResumeButton
@@ -4429,69 +4403,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1549500399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549500396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miEvento:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActivarBotonDerrota
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1549500398}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OtroEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  tecerEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  cuartoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  quintaEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  sextoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  septimoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  octavoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  novenoEvento:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1549500400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549500396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d626c29c6831f4db7be0ceae5992cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1549500401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4536,7 +4447,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1147304700}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ReanudarJuego
         m_Mode: 1
@@ -4586,6 +4497,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549500396}
   m_CullTransparentMesh: 1
+--- !u!114 &1549500404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549500396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miEvento:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1147304700}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ActivarBotonDerrota
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1549500398}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OtroEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  tecerEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  cuartoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  quintaEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  sextoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  septimoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  octavoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  novenoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1549500405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549500396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d626c29c6831f4db7be0ceae5992cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonAnimator: {fileID: 1549500398}
 --- !u!1 &1575043572
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,7 +4725,7 @@ GameObject:
   - component: {fileID: 1608529758}
   - component: {fileID: 1608529757}
   - component: {fileID: 1608529756}
-  - component: {fileID: 1608529755}
+  - component: {fileID: 1608529759}
   m_Layer: 0
   m_Name: panelCargarMenu
   m_TagString: Untagged
@@ -4778,57 +4753,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1268.6304, y: 0}
   m_SizeDelta: {x: 2537.2607, y: -0.000061035156}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1608529755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608529753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100e13c688616be40a42325325c44a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miEvento:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CargarEscenaMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OtroEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  tecerEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  cuartoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  quintaEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  sextoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  septimoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  octavoEvento:
-    m_PersistentCalls:
-      m_Calls: []
-  novenoEvento:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!95 &1608529756
 Animator:
   serializedVersion: 4
@@ -4887,6 +4811,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608529753}
   m_CullTransparentMesh: 1
+--- !u!114 &1608529759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608529753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c36a30e1cf6c7c45a87990238c41b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miEvento:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1147304700}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CargarEscenaMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OtroEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  tecerEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  cuartoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  quintaEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  sextoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  septimoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  octavoEvento:
+    m_PersistentCalls:
+      m_Calls: []
+  novenoEvento:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1675055317
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,8 +4895,8 @@ RectTransform:
   m_Father: {fileID: 581064131}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4994995, y: 0}
-  m_AnchorMax: {x: 0.4994995, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4996,8 +4971,8 @@ RectTransform:
   m_Father: {fileID: 942278296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5076,6 +5051,134 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1801330756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801330758}
+  - component: {fileID: 1801330757}
+  m_Layer: 0
+  m_Name: MusicaAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1801330757
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801330756}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6603334515352314337, guid: 99b40e3c35dfd6c4ebd46c75d35ff5e8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1801330758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801330756}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.983, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1885645470}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1885645469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,7 +5207,8 @@ Transform:
   m_LocalPosition: {x: -0.983, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1801330758}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5117,19 +5221,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1885645469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 049d023b8c37ece4aae72c24230a1f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 36b244e54b1973f45910e91acd6b8bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
-  masterSlider: {fileID: 0}
-  musicSlider: {fileID: 0}
-  soundFxSlider: {fileID: 0}
-  musicaAudioSource: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 99b40e3c35dfd6c4ebd46c75d35ff5e8, type: 2}
+  masterSlider: {fileID: 841605750}
+  musicSlider: {fileID: 1191918151}
+  soundFxSlider: {fileID: 537882130}
+  musicaAudioSource: {fileID: 1801330757}
   musicaVictoriaAS: {fileID: 0}
-  musicaNivel1AudioClip: {fileID: 0}
+  musicaNivel1AudioClip: {fileID: 8300000, guid: 474a6431b183ad7419562b482b569fd4, type: 3}
   musicaVictoriaAudioClip: {fileID: 0}
-  velocidadDisminuidor: 0
-  velCorrutina: 0
+  velocidadDisminuidor: 0.05
+  velCorrutina: 0.1
 --- !u!1 &1885796798
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,7 +5486,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5458,7 +5562,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.4994995, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

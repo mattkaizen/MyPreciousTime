@@ -34,7 +34,7 @@ public class EspadaController : MonoBehaviour
 
     private MonstruoController monstruoController;
     private JugadorController jugadorController;
-    private GameManager gameManager;
+    private GameManager2 gameManager;
 
 
     private bool golpeAcertado;
@@ -63,7 +63,7 @@ public class EspadaController : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager2>();
 
         primeraEspada = primeraEspadaGo.GetComponent<Espada>();
         segundaEspada = segundaEspadaGo.GetComponent<Espada>();

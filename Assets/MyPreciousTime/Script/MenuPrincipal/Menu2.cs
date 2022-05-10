@@ -69,9 +69,9 @@ public class Menu2 : MonoBehaviour
         panelAnimator.SetBool("activarPanel", true);
     }
 
-    public void CargarEscenaDiapositivas()
+    public void CargarEscenaDiapositivas() //ACa debe cargar el nivel 1
     {
-        SceneManager.LoadScene("Historia");
+        SceneManager.LoadScene(1);
     }
     public void Salir()
     {
