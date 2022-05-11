@@ -5,31 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Menu.unity
     guid: 0d3ed55ab2fbb5746bf6bad254958d89
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 2.unity
-    guid: 633babe5855a7ba489a7cde04e417d5c
+    guid: 444700dd875da03438a875688fa243fc
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 3.unity
-    guid: 56339c5b6fb89c94fab229c3420d4c27
+    guid: 83bbe75f34a9f2a4e816e33d85731405
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 2 Fase 1.unity
-    guid: 34e80ebb7852c5e439c72f58c6d19795
+    guid: e24d8f92af97af14c8b354284575ff09
   m_configObjects: {}

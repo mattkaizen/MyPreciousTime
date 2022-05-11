@@ -6,9 +6,9 @@ public class SaveVariables : MonoBehaviour
 {
     public static SaveVariables inst;
 
-    private int numeroDeNivel;
+    private bool ganoElJuego; //Si no gano el juego, se ve la anim de derrota en el menu principal
 
-    public int NumeroDeNivel { get => numeroDeNivel; set => numeroDeNivel = value; }
+    public bool GanoElJuego { get => ganoElJuego; set => ganoElJuego = value; }
     private void Awake()
     {
         if (SaveVariables.inst == null)

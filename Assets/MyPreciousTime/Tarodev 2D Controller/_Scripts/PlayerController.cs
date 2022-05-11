@@ -12,6 +12,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour, IPlayerController
 {
+    private AudioController audioController;
     private GameManager gameManager;
 
     // Public for external hooks
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        audioController = FindObjectOfType<AudioController>();
         Invoke(nameof(Activate), 0.25f); //Tiempo en que se activa la caida del personaje
     }
     //void Awake() => Invoke(nameof(Activate), 0.5f);
@@ -273,6 +275,10 @@ public class PlayerController : MonoBehaviour, IPlayerController
             _coyoteUsable = false;
             _timeLeftGrounded = float.MinValue;
             JumpingThisFrame = true;
+
+            Debug.Log("Salto");
+            //Salta
+            audioController.ReproducirSonidoSalto();
         }
         else
         {

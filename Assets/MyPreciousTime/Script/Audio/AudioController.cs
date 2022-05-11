@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -19,12 +20,18 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioSource musicaVictoriaAS;
     [SerializeField] AudioSource sonidoVictoriaAS;
     [SerializeField] AudioSource sonidoGolpeAS;
+    [SerializeField] AudioSource sonidoSaltoAS;
+    [SerializeField] AudioSource sonidoCargarEscenaAS;
+    [SerializeField] AudioSource sonidoInicioEscenaAS;
 
     [Header("Audioclips")]
     [SerializeField] AudioClip musicaNivelAudioClip;
     [SerializeField] AudioClip musicaVictoriaAudioClip;
     [SerializeField] AudioClip sonidoVictoriaAudioClip;
     [SerializeField] AudioClip sonidoGolpeAudioClip;
+    [SerializeField] AudioClip sonidoCargarEscAudioClip;
+    [SerializeField] AudioClip sonidoInicioEscAudioClip;
+    [SerializeField] List<AudioClip> listaSaltosAudioClip;
 
     [Header("Velocidad a disminuir la musica")]
     [SerializeField] float velocidadDisminuidor; //0.05
@@ -77,9 +84,8 @@ public class AudioController : MonoBehaviour
     void Update()
     {
         IniciarMusica();
-        ReproducirSonidoVictoria();
-        RastrearSonidoGolpeJefe();
-        //ReproducirMusicaVictoria();
+        ReproducirSonidoGolpe();
+        RastrearSonidoVictoria();
     }
 
     private void OnDisable()
@@ -141,7 +147,7 @@ public class AudioController : MonoBehaviour
 
     void ReproducirMusicaVictoria()
     {
-        if(musicaVictoria && !musicaVictoriaAS.isPlaying)
+        if (musicaVictoria && !musicaVictoriaAS.isPlaying)
         {
             musicaVictoriaAS.PlayOneShot(musicaVictoriaAudioClip);
         }
@@ -154,38 +160,64 @@ public class AudioController : MonoBehaviour
 
     //------------------------------------------------
 
-    public void RastrearSonidoGolpeJefe()
+    public void ReproducirSonidoSalto()
     {
-        if (sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
+        sonidoSaltoAS.PlayOneShot(listaSaltosAudioClip[Random.Range(0, listaSaltosAudioClip.Count)]);
+    }
+
+    public void RastrearSonidoVictoria()
+    {
+        if (sonidoVictoria && !sonidoVictoriaAS.isPlaying)
         {
             terminoSonidos = true;
         }
     }
-    public void ReproducirSonidoGolpeJefe() //Se reproduce sonido de golpe cuando termina de reproducir el sonido de victoria
+    public void ReproducirSonidoVictoria() //Se reproduce sonido de golpe cuando termina de reproducir el sonido de victoria
     {
-        if (sonidoVictoria && !sonidoVictoriaAS.isPlaying && !sonidoGolpeJefe)
+        if (sonidoGolpeJefe && !sonidoGolpeAS.isPlaying && !sonidoVictoria)
         {
-            sonidoGolpeAS.PlayOneShot(sonidoGolpeAudioClip);
-            sonidoGolpeJefe = true;
+            sonidoVictoriaAS.PlayOneShot(sonidoVictoriaAudioClip);
+            sonidoVictoria = true;
         }
     }
-
-    public void ReproducirSonidoVictoria() //Se reproduce en el update
+    public void ReproducirSonidoGolpe() //Se reproduce en el update
     {
         if (goldPlatfom.ActivarVictoria)
         {
-            if (!sonidoVictoria && !sonidoVictoriaAS.isPlaying)
+            if (!sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
             {
-                sonidoVictoria = true;
-                sonidoVictoriaAS.PlayOneShot(sonidoVictoriaAudioClip);
+                sonidoGolpeJefe = true;
+                sonidoGolpeAS.PlayOneShot(sonidoGolpeAudioClip);
             }
-            ReproducirSonidoGolpeJefe();
+            ReproducirSonidoVictoria();
         }
     }
+
+    //public void ReproducirSonidoVictoria() //Se reproduce en el update
+    //{
+    //    if (goldPlatfom.ActivarVictoria)
+    //    {
+    //        if (!sonidoVictoria && !sonidoVictoriaAS.isPlaying)
+    //        {
+    //            sonidoVictoria = true;
+    //            sonidoVictoriaAS.PlayOneShot(sonidoVictoriaAudioClip);
+    //        }
+    //        ReproducirSonidoGolpeJefe();
+    //    }
+    //}
 
     public void IniciarCorrutinaApagarMusica()
     {
         StartCoroutine(ApagarMusica());
+    }
+
+    public void ReproducirSonidoNuevaEscena()
+    {
+        sonidoCargarEscenaAS.PlayOneShot(sonidoCargarEscAudioClip);
+    }
+    public void ReproducirSonidoInicioEscena()
+    {
+        sonidoInicioEscenaAS.PlayOneShot(sonidoInicioEscAudioClip);
     }
 
     public void IniciarCorrutinaAparecerMusica()

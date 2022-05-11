@@ -26,6 +26,11 @@ public class PlayerCollision : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<GoldPlatform>().TocoGoldPlatform();
         }
+        else if (collision.CompareTag("Secuencial"))
+        {
+            Debug.Log("Secuencia");
+            collision.gameObject.GetComponentInParent<SecuencialPlatform>().ActivarCorrPlataformaInicial();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -39,6 +44,11 @@ public class PlayerCollision : MonoBehaviour
         else if (collision.CompareTag("Meta"))
         {
             collision.gameObject.GetComponentInParent<GoldPlatform>().TocoGoldPlatform();
+        }
+        else if (collision.CompareTag("Secuencial"))
+        {
+            Debug.Log("Secuencia");
+            collision.gameObject.GetComponentInParent<SecuencialPlatform>().ActivarCorrPlataformaInicial();
         }
     }
 
