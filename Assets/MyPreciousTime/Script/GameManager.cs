@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
             seActivoMuerte = true;
 
             playerAnim.StartDeathAnim();
-            Debug.Log("activarAnmMuerte");
+            audioController.ReproducirSonidoMuerte();
             //activar animacion de muerte
         }
     }

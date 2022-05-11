@@ -23,6 +23,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioSource sonidoSaltoAS;
     [SerializeField] AudioSource sonidoCargarEscenaAS;
     [SerializeField] AudioSource sonidoInicioEscenaAS;
+    [SerializeField] AudioSource muerteAS;
 
     [Header("Audioclips")]
     [SerializeField] AudioClip musicaNivelAudioClip;
@@ -31,6 +32,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip sonidoGolpeAudioClip;
     [SerializeField] AudioClip sonidoCargarEscAudioClip;
     [SerializeField] AudioClip sonidoInicioEscAudioClip;
+    [SerializeField] AudioClip muerteAudioClip;
     [SerializeField] List<AudioClip> listaSaltosAudioClip;
 
     [Header("Velocidad a disminuir la musica")]
@@ -160,6 +162,10 @@ public class AudioController : MonoBehaviour
 
     //------------------------------------------------
 
+    public void ReproducirSonidoMuerte()
+    {
+        muerteAS.PlayOneShot(muerteAudioClip);
+    }
     public void ReproducirSonidoSalto()
     {
         sonidoSaltoAS.PlayOneShot(listaSaltosAudioClip[Random.Range(0, listaSaltosAudioClip.Count)]);

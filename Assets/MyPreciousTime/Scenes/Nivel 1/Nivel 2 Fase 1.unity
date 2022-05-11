@@ -6305,12 +6305,14 @@ MonoBehaviour:
   sonidoSaltoAS: {fileID: 1969757273}
   sonidoCargarEscenaAS: {fileID: 953659215}
   sonidoInicioEscenaAS: {fileID: 676303819}
+  muerteAS: {fileID: 1621566570}
   musicaNivelAudioClip: {fileID: 8300000, guid: e212111905be4664ea6646cb62eb72ae, type: 3}
   musicaVictoriaAudioClip: {fileID: 0}
   sonidoVictoriaAudioClip: {fileID: 8300000, guid: 1d5c88d7622b39c468d14b422bcbaed9, type: 3}
   sonidoGolpeAudioClip: {fileID: 8300000, guid: 3dce671d6b479ff4c8029d0ae259a09e, type: 3}
   sonidoCargarEscAudioClip: {fileID: 8300000, guid: 6627ec0e871f55a4fa7b918863d7f94f, type: 3}
   sonidoInicioEscAudioClip: {fileID: 8300000, guid: 5bf21dc8af304394ca223dcaee2fd40c, type: 3}
+  muerteAudioClip: {fileID: 8300000, guid: 39c9a617836d7774f9ef22d441502192, type: 3}
   listaSaltosAudioClip:
   - {fileID: 8300000, guid: 5bfa4a5f64a581e4dbce4aea8e547c56, type: 3}
   velocidadDisminuidor: 0.05
