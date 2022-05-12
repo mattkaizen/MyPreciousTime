@@ -31,6 +31,10 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Secuencia");
             collision.gameObject.GetComponentInParent<SecuencialPlatform>().ActivarCorrPlataformaInicial();
         }
+        else if (collision.CompareTag("Victoria"))
+        {
+            collision.gameObject.GetComponentInParent<GoldPlatform>().TocoUltimaGoldPlatform();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -49,6 +53,10 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Secuencia");
             collision.gameObject.GetComponentInParent<SecuencialPlatform>().ActivarCorrPlataformaInicial();
+        }
+        else if (collision.CompareTag("Victoria"))
+        {
+            collision.gameObject.GetComponentInParent<GoldPlatform>().TocoUltimaGoldPlatform();
         }
     }
 

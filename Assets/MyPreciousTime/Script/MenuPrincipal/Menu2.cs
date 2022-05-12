@@ -8,6 +8,9 @@ public class Menu2 : MonoBehaviour
     [Header("Animator del panel")]
     [SerializeField] Animator panelAnimator;
 
+    [Header("Animator del Fondo")]
+    [SerializeField] Animator fondoAnim;
+
     [Header("Apagar musica")]
     [SerializeField] float velCorrutina;
     [SerializeField] float velocidadDisminuidor;
@@ -26,6 +29,23 @@ public class Menu2 : MonoBehaviour
     private void Update()
     {
         ReproducirMusicaMenuPrincipal();
+
+        CambiarFondoMenu();
+    }
+
+    public void CambiarFondoMenu()
+    {
+        if(SaveVariables.inst.MostrarPantallaDerrota)
+        {
+            //Poner pantalla de derrota
+            fondoAnim.SetBool("Derrota", true);
+        }
+
+        else if(SaveVariables.inst.GanoElJuego)
+        {
+            //Poner pantalla de victoria
+            fondoAnim.SetBool("Victoria", true);
+        }
     }
     public void Jugar()
     {

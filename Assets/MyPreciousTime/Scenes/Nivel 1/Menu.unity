@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 231857139}
   - component: {fileID: 231857141}
   - component: {fileID: 231857140}
+  - component: {fileID: 231857142}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -614,6 +615,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231857138}
   m_CullTransparentMesh: 1
+--- !u!95 &231857142
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231857138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f70539b5561f744c885687710e05c54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &267661820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,6 +4149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelAnimator: {fileID: 1948407427}
+  fondoAnim: {fileID: 231857142}
   velCorrutina: 0.1
   velocidadDisminuidor: 0.05
   valorDisminuidor: 0
@@ -4877,7 +4899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2112998307}
-  - component: {fileID: 2112998306}
+  - component: {fileID: 2112998308}
   m_Layer: 0
   m_Name: GuardarVariables
   m_TagString: Untagged
@@ -4885,18 +4907,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2112998306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112998305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 339f04026911c89469e71f0b6f58b6c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2112998307
 Transform:
   m_ObjectHideFlags: 0
@@ -4912,6 +4922,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2112998308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112998305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f5919bfa5569f4b853b706af656484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2126729076
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ TagManager:
   - Inicial
   - Meta
   - Secuencial
+  - Victoria
   layers:
   - Default
   - TransparentFX

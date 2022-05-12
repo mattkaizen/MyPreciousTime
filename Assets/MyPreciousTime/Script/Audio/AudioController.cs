@@ -37,7 +37,8 @@ public class AudioController : MonoBehaviour
 
     [Header("Velocidad a disminuir la musica")]
     [SerializeField] float velocidadDisminuidor; //0.05
-    [SerializeField] float velCorrutinaApagar; //0.1
+    [SerializeField] float velCorrutinaApagar;//0.1
+    [SerializeField] float velCorrutinaApagarVictoria;
 
     [Header("Velocidad a aumentar la musica")]
     [SerializeField] float velocidadAumentador; //0.05
@@ -88,6 +89,7 @@ public class AudioController : MonoBehaviour
         IniciarMusica();
         ReproducirSonidoGolpe();
         RastrearSonidoVictoria();
+        ReproducirMusicaVictoria();
     }
 
     private void OnDisable()
@@ -147,7 +149,11 @@ public class AudioController : MonoBehaviour
         musicaAudioSource.UnPause();
     }
 
-    void ReproducirMusicaVictoria()
+    public void ActivarMusicaVictoria() //Se ejecuta al final de la anim desaparecer panel CanvasFOndo
+    {
+        musicaVictoria = true;
+    }
+    public void ReproducirMusicaVictoria()
     {
         if (musicaVictoria && !musicaVictoriaAS.isPlaying)
         {
@@ -158,6 +164,7 @@ public class AudioController : MonoBehaviour
     public void IniciarMusicaVictoria() //Iniciar cuando aparezca la pantalla en negro despues del jefe
     {
         musicaVictoria = true;
+        StartCoroutine(AparecerMusicaVictoria());
     }
 
     //------------------------------------------------
@@ -188,7 +195,7 @@ public class AudioController : MonoBehaviour
     }
     public void ReproducirSonidoGolpe() //Se reproduce en el update
     {
-        if (goldPlatfom.ActivarVictoria)
+        if (goldPlatfom.ActivarVictoriaFase)
         {
             if (!sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
             {
@@ -198,6 +205,7 @@ public class AudioController : MonoBehaviour
             ReproducirSonidoVictoria();
         }
     }
+
 
     //public void ReproducirSonidoVictoria() //Se reproduce en el update
     //{
@@ -234,6 +242,24 @@ public class AudioController : MonoBehaviour
             StartCoroutine(AparecerMusica());
         }
     }
+
+    public void IniciarCorrutinaAparecerMusicaVictoria()
+    {
+        StartCoroutine(AparecerMusicaVictoria());
+    }
+    public void IniciarCorrutinaApagarMusicaVictoria()
+    {
+        StartCoroutine(ApagarMusicaVictoria());
+    }
+    IEnumerator AparecerMusicaVictoria()
+    {
+        musicaVictoriaAS.volume = 0.01f;
+        while (musicaVictoriaAS.volume < 0.8f)
+        {
+            musicaVictoriaAS.volume += velocidadAumentador;
+            yield return new WaitForSeconds(velCorrutinaIniciar);
+        }
+    }
     IEnumerator AparecerMusica()
     {
         primeraReproduccionMusica = true;
@@ -250,6 +276,15 @@ public class AudioController : MonoBehaviour
         {
             musicaAudioSource.volume -= velocidadDisminuidor;
             yield return new WaitForSeconds(velCorrutinaApagar);
+        }
+    }
+
+    IEnumerator ApagarMusicaVictoria()
+    {
+        while (musicaAudioSource.volume > 0.01f)
+        {
+            musicaAudioSource.volume -= velocidadDisminuidor;
+            yield return new WaitForSeconds(velCorrutinaApagarVictoria);
         }
     }
 }

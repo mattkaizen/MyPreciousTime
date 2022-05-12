@@ -6,8 +6,8 @@ public class GoldPlatform : MonoBehaviour
 {
     private GameManager gameManager;
 
-    private bool activarVictoria;
-    public bool ActivarVictoria { get => activarVictoria; }
+    private bool activarVictoriaFase;
+    public bool ActivarVictoriaFase { get => activarVictoriaFase; }
 
     private void Awake()
     {
@@ -15,8 +15,13 @@ public class GoldPlatform : MonoBehaviour
     }
     public void TocoGoldPlatform() //Activar sonido de victoria
     {
-        activarVictoria = true;
+        activarVictoriaFase = true;
         //audioController.ReproducirSonidoVictoria();
         //gameManager.ActivarPanelCargarNivel();
+    }
+
+    public void TocoUltimaGoldPlatform()
+    {
+        gameManager.ActivarVictoriaJuego = true;
     }
 }

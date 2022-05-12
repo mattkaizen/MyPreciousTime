@@ -10,14 +10,11 @@ EditorBuildSettings:
     guid: 0d3ed55ab2fbb5746bf6bad254958d89
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: d8f7a384fb867114192a80ff22b1d1f0
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 2.unity
-    guid: 444700dd875da03438a875688fa243fc
+    guid: 8d7289e67f7444b4db68e8b0d05a1273
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 3.unity
-    guid: 83bbe75f34a9f2a4e816e33d85731405
-  - enabled: 1
-    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 2 Fase 1.unity
-    guid: e24d8f92af97af14c8b354284575ff09
+    guid: 819c2d6d615bb434ba679a9458b4e447
   m_configObjects: {}

@@ -28,6 +28,15 @@ public class GameManager : MonoBehaviour
     [Header("Animator de la Camara ")]
     [SerializeField] Animator cameraAnim;
 
+    [Header("Animator de PanelVictoria ")]
+    [SerializeField] Animator panelCargarVictoria;
+
+    [Header("Animator de CanvasFondo ")]
+    [SerializeField] Animator fondoEnemigo;
+
+    [Header("Animator en CanvasFondo de Nombre de monstruo ")]
+    [SerializeField] Animator textoMonstruoAnim;
+
     private PlayerCollision playerCollision;
     private PlayerAnimator playerAnim;
     private AudioController audioController;
@@ -43,7 +52,10 @@ public class GameManager : MonoBehaviour
     private bool juegoPausado;
     private bool menuOpcionesAbierto;
 
+    private bool animVictoriaInicio;
+    private bool activarVictoriaJuego;
 
+    public bool ActivarVictoriaJuego { get => activarVictoriaJuego; set => activarVictoriaJuego = value; }
     public bool JuegoActivo { get => juegoActivo; }
 
     private void Awake()
@@ -64,6 +76,7 @@ public class GameManager : MonoBehaviour
         ConsultarNivelYFase();
         RastrearMuerteJugador();
         IrSiguienteEscena();
+        IniciarPanelAnimVictoria();
     }
 
     public void PasarASiguienteNivel() //Se reproduce al final de panel cargar escena
@@ -221,6 +234,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ActivarAnimVictoria() //Se reproduce al final de la anim de cargarPanelVictoria
+    {
+        fondoEnemigo.SetBool("Victoria", true);
+    }
+
+    public void IniciarPanelAnimVictoria()
+    {
+        if (ActivarVictoriaJuego && !animVictoriaInicio)
+        {
+            animVictoriaInicio = true;
+
+            SaveVariables.inst.ModificarValorGanoJuego(true);
+            //Activar la animacion de victoria
+            audioController.IniciarCorrutinaApagarMusicaVictoria();
+            panelCargarVictoria.SetBool("activarPanel", true);
+            Debug.Log("Gano el juego");
+        }
+    }
+
+    public void CargarEscenaMenu() //Debe estar al final de la anim del panel cargar menu
+    {
+        //SaveVariables singleton = SaveVariables.inst;
+        if(!SaveVariables.inst.ObtenerValorGanoJuego()) //Si no gano el juego, muestra pantalla de derrota
+        {
+            SaveVariables.inst.ModificarValorPantallaDerrota(true);
+        }
+
+        else if(SaveVariables.inst.ObtenerValorGanoJuego())//Si gano el juego, muestra pantalla de victoria y, no muestra la de derrota
+        {
+            SaveVariables.inst.ModificarValorGanoJuego(true);
+            SaveVariables.inst.ModificarValorPantallaDerrota(false);
+        }
+
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void ActivarAnimTextoMonstruo() //Se activa en la mitad del panel de inicio nivel
+    {
+        textoMonstruoAnim.SetBool("Aparecer", true); //Esta anim inicia el juego
+    }
     //MENU PAUSA
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -307,10 +360,6 @@ public class GameManager : MonoBehaviour
         botonMenuPausa.SetBool("aparecerBoton", true);
 
         menuOpcionesAbierto = false;
-    }
-    public void CargarEscenaMenu() //Debe estar al final de la anim del panel cargar menu
-    {
-        SceneManager.LoadScene("Menu");
     }
     public void ActivarPanelCargarMenu() //Se debe iniciar cuando se apreta el boton menu
     {
