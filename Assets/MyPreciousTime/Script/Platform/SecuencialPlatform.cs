@@ -32,33 +32,26 @@ public class SecuencialPlatform : MonoBehaviour
         }
     }
 
+    public void ActivarPlataformaPermanente(Animator nextPlatform)
+    {
+        StartCoroutine(ActivarPlataformaSecuencialPermanente(nextPlatform));
+
+    }
+
     public void ActivarSigPlataforma(Animator nextPlatform)
     {
         StartCoroutine(ActivarPlataformaSecuencial(platformAnim, nextPlatform));
     }
+    public void DesactivarOtraPlatforma(Animator otherPlatform)
+    {
+        otherPlatform.SetBool("Desactivar", true);
+    }
 
-    //public void IniciarCorrutinaActivarPlataforma()
-    //{
-    //    StartCoroutine(ActivarPlataformaSecuencial());
-    //}
-
-    //void ElegirEstado()
-    //{
-    //    switch (estadoPlataforma)
-    //    {
-    //        case 0:
-    //            DesactivarAnimacion();
-    //            estadoPlataforma = 1;
-    //            Debug.Log("Ejecutado0");
-    //            break;
-    //        case 1:
-    //            ActivarAnimacion();
-    //            estadoPlataforma = 0;
-    //            Debug.Log("Ejecutado1");
-    //            break;
-    //    }
-    //}
-
+    IEnumerator ActivarPlataformaSecuencialPermanente(Animator nextPlatform) //Si inicia al aparecer la plataforma
+    {
+        yield return new WaitForSeconds(timeToActivePlatform);
+        nextPlatform.SetBool("Activar", true);
+    }
     IEnumerator ActivarPlataformaSecuencial(Animator thisPlatform, Animator nextPlatform) //Si inicia al aparecer la plataforma
     {
         thisPlatform.SetBool("Activar", false);
@@ -73,20 +66,4 @@ public class SecuencialPlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToActivePlatform);
     }
-    //IEnumerator ActivarPlataformaSecuencial()
-    //{
-    //    plataformaActiva = true;
-    //    yield return new WaitForSeconds(timeToActivePlatform);
-    //    //ElegirEstado();
-    //}
-    //void ActivarAnimacion()
-    //{
-    //    platformAnim.SetBool("Desactivar", false);
-    //    platformAnim.SetBool("Activar", true);
-    //}
-    //void DesactivarAnimacion()
-    //{
-    //    platformAnim.SetBool("Activar", false);
-    //    platformAnim.SetBool("Desactivar", true);
-    //}
 }

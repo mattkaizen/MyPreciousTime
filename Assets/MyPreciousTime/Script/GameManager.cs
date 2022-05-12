@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Nro Plataformas Para ganar")]
+    [SerializeField] int plataformasDoradasXNivel;
+
     [Header("Animator del menu de pausa ")]
     [SerializeField] Animator panelAnim;
     [SerializeField] Animator botonRetryPausa;
@@ -37,10 +40,14 @@ public class GameManager : MonoBehaviour
     [Header("Animator en CanvasFondo de Nombre de monstruo ")]
     [SerializeField] Animator textoMonstruoAnim;
 
+
+
     private PlayerCollision playerCollision;
     private PlayerAnimator playerAnim;
     private AudioController audioController;
 
+
+    private int platfDoradasTocadas;
     private int numeroDeNivel;
     private int numeroDeFase;
     private int numeroDeEscena;
@@ -55,6 +62,8 @@ public class GameManager : MonoBehaviour
     private bool animVictoriaInicio;
     private bool activarVictoriaJuego;
 
+    public int PlataformasDoradasXNivel { get => plataformasDoradasXNivel; set => plataformasDoradasXNivel = value; }
+    public int PlatfDoradasTocadas { get => platfDoradasTocadas; set => platfDoradasTocadas = value; }
     public bool ActivarVictoriaJuego { get => activarVictoriaJuego; set => activarVictoriaJuego = value; }
     public bool JuegoActivo { get => juegoActivo; }
 

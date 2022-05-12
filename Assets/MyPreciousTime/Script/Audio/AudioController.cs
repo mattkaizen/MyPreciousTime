@@ -45,8 +45,12 @@ public class AudioController : MonoBehaviour
     [SerializeField] float velCorrutinaIniciar; //0.1
 
 
+
+
     private GameManager gameManager;
     private GoldPlatform goldPlatfom;
+
+
 
     private bool musicaIniciada;
     private bool musicaPausada;
@@ -65,6 +69,7 @@ public class AudioController : MonoBehaviour
 
     private string parametroFx;
     private string parametroMusica;
+
 
     public bool TerminoSonidos { get => terminoSonidos; }
 
@@ -195,7 +200,7 @@ public class AudioController : MonoBehaviour
     }
     public void ReproducirSonidoGolpe() //Se reproduce en el update
     {
-        if (goldPlatfom.ActivarVictoriaFase)
+        if (goldPlatfom.ActivarVictoriaFase && gameManager.PlatfDoradasTocadas == gameManager.PlataformasDoradasXNivel)
         {
             if (!sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
             {

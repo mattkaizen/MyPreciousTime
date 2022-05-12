@@ -4277,6 +4277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aba1909dec8d854c9a76643ea0220f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numeroPlataforma: 0
 --- !u!50 &916140405
 Rigidbody2D:
   serializedVersion: 4
@@ -4425,6 +4426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1591e2967032b17488e12c1c79280650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plataformasDoradasXNivel: 1
   panelAnim: {fileID: 493678841}
   botonRetryPausa: {fileID: 312617001}
   botonOptionsPausa: {fileID: 1629346719}
@@ -6051,6 +6053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aba1909dec8d854c9a76643ea0220f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numeroPlataforma: 0
 --- !u!50 &1234047087
 Rigidbody2D:
   serializedVersion: 4
@@ -8207,6 +8210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aba1909dec8d854c9a76643ea0220f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numeroPlataforma: 0
 --- !u!50 &1648237371
 Rigidbody2D:
   serializedVersion: 4
@@ -11558,6 +11562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aba1909dec8d854c9a76643ea0220f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numeroPlataforma: 0
 --- !u!50 &2042003158
 Rigidbody2D:
   serializedVersion: 4
