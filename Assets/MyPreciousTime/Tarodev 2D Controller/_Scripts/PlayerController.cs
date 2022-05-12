@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void Update()
     {
-        if (gameManager.JuegoActivo)
+        if (gameManager.JuegoActivo && !gameManager.JuegoPausado)
         {
             if (!_active) return;
             // Calculate velocity

@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     public int PlatfDoradasTocadas { get => platfDoradasTocadas; set => platfDoradasTocadas = value; }
     public bool ActivarVictoriaJuego { get => activarVictoriaJuego; set => activarVictoriaJuego = value; }
     public bool JuegoActivo { get => juegoActivo; }
+    public bool JuegoPausado { get => juegoPausado; }
 
     private void Awake()
     {

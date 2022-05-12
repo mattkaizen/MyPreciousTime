@@ -9,6 +9,8 @@ TagManager:
   - Meta
   - Secuencial
   - Victoria
+  - SecuencialGold
+  - SecuencialDynamic
   layers:
   - Default
   - TransparentFX

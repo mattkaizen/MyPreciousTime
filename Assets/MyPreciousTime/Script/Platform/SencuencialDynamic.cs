@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DynamicPlatform : MonoBehaviour
+public class SencuencialDynamic : MonoBehaviour
 {
     [Header("Controlador de plataforma")]
     [SerializeField] AnimationCurve curve;
@@ -19,8 +19,15 @@ public class DynamicPlatform : MonoBehaviour
     [SerializeField] float timeToActivePlatform;
     [SerializeField] Animator goldPlatformAnim;
 
+    [Header("Siguiente plataforma a activar")]
+    [SerializeField] GameObject sigPlataformaGO;
+
+    [Header("Es la ultima?")]
+    [SerializeField] bool ultimaPlatSecuencia;
+
     private Vector3 inicialPos;
     private Rigidbody2D platformRb;
+    private Animator platformAnim;
 
     private float current;
     private float target;
@@ -36,6 +43,10 @@ public class DynamicPlatform : MonoBehaviour
 
     private void Awake()
     {
+        current = 0;
+        target = 1;
+
+        platformAnim = GetComponent<Animator>();
         platformRb = GetComponent<Rigidbody2D>();
 
         inicialPos = platformRb.position;
@@ -43,9 +54,9 @@ public class DynamicPlatform : MonoBehaviour
 
     private void Update()
     {
-        CalcularDistanciaObjetivo();
-        ActivarGoldPlatformCantidad();
-        ActivarGoldPlatformTiempo();
+        CalcularDistanciaMeta();
+        //ActivarGoldPlatformCantidad();
+        //ActivarGoldPlatformTiempo();
     }
 
     private void FixedUpdate()
@@ -80,6 +91,28 @@ public class DynamicPlatform : MonoBehaviour
         }
     }
 
+    private void CalcularDistanciaMeta()
+    {
+        if (Vector3.Distance(platformRb.position, goalPosition) < minDistance && !llegoPosA)
+        {
+            llegoPosA = true;
+            StartCoroutine(ActivarPlataformaSecuencial(platformAnim, sigPlataformaGO));
+
+            if(ultimaPlatSecuencia)
+            {
+                goldPlatformAnim.SetBool("Activar", true);
+            }
+        }
+    }
+
+    IEnumerator ActivarPlataformaSecuencial(Animator thisPlatform, GameObject nextPlatform) //Si inicia al aparecer la plataforma
+    {
+        thisPlatform.SetBool("Activar", false);
+        thisPlatform.SetBool("Desactivar", false);
+        yield return new WaitForSeconds(timeToActivePlatform);
+        nextPlatform.SetActive(true);
+        thisPlatform.SetBool("Desactivar", true);
+    }
     private void CalcularDistanciaObjetivo()
     {
         if (Vector3.Distance(platformRb.position, goalPosition) < minDistance && !llegoPosA)
@@ -119,9 +152,12 @@ public class DynamicPlatform : MonoBehaviour
 
     private void MoverPosAPosB()
     {
-        current = Mathf.MoveTowards(current, target, speed * Time.deltaTime);
+        if (tocoPlataforma && !llegoPosA)
+        {
+            current = Mathf.MoveTowards(current, target, speed * Time.deltaTime);
 
-        platformRb.position = Vector3.Lerp(inicialPos, goalPosition, curve.Evaluate(current));
+            platformRb.position = Vector3.Lerp(inicialPos, goalPosition, curve.Evaluate(current));
+        }
     }
 
     IEnumerator ActivarPlataformaGold() //Si inicia al aparecer la plataforma

@@ -15,6 +15,8 @@ public class BulletMovement : MonoBehaviour
 
     private Vector3 inicialPos;
     private Rigidbody2D platformRb;
+    private AudioController audioController;
+    private GameManager gameManager;
 
     private float current;
     private float target;
@@ -25,19 +27,26 @@ public class BulletMovement : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         platformRb = GetComponent<Rigidbody2D>();
-
+        audioController = FindObjectOfType<AudioController>();
         inicialPos = platformRb.position;
     }
 
     private void Update()
     {
-        CalcularDistanciaObjetivo();
+        if (gameManager.JuegoActivo)
+        {
+            CalcularDistanciaObjetivo();
+        }
     }
 
     private void FixedUpdate()
     {
-        MoverPosAPosB();
+        if (gameManager.JuegoActivo)
+        {
+            MoverPosAPosB();
+        }
     }
 
     private void CalcularDistanciaObjetivo()
@@ -47,6 +56,7 @@ public class BulletMovement : MonoBehaviour
             current = 0;
             target = 1;
             activoMovimiento = true;
+            audioController.ReproducirSonidoProyectil();
         }
         else if (Vector3.Distance(platformRb.position, goalPosition) < minDistance)
         {

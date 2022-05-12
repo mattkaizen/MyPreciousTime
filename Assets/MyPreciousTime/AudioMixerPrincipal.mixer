@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7951852222906819095
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Attenuation
+  m_EffectID: 2b74ba341d57b5f479c542ebb5ec8af4
+  m_EffectName: Attenuation
+  m_MixLevel: b39953186834c7f43b9c34b8d62c10f3
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-7600670067578070940
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -77,6 +91,7 @@ AudioMixerGroupController:
   - {fileID: -7600670067578070940}
   - {fileID: 9208907032241268833}
   - {fileID: 435689678734704468}
+  - {fileID: 7231381163396511712}
   m_Volume: 86ca7f9cd628cf443a39aab2aa29747b
   m_Pitch: 199b8631a73830741ad45f44212956b4
   m_Send: 00000000000000000000000000000000
@@ -189,6 +204,7 @@ AudioMixerController:
     - 4ce49466ebfcb1e4d8a9c509c7c011fd
     - 8204513fc37d89a4eb9529ff703f8d2b
     - a580aff9124280c4d84581fad793c53a
+    - cdd5db19200287841b16fef55eb75043
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -243,6 +259,7 @@ AudioMixerSnapshotController:
     42f0783895369a9438a408d0e9e0b417: 15
     b0923f3aaf89e2c44945ee8a7ee314ca: 15
     86ca7f9cd628cf443a39aab2aa29747b: 0
+    6c72eafcea78282418d0d43340f9b9c5: 15
   m_TransitionOverrides: {}
 --- !u!243 &435689678734704468
 AudioMixerGroupController:
@@ -325,6 +342,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 7326458529398574402}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &7231381163396511712
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bala
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: cdd5db19200287841b16fef55eb75043
+  m_Children: []
+  m_Volume: 6c72eafcea78282418d0d43340f9b9c5
+  m_Pitch: 6f6dcc25db5812b4eb2b47a9d1b12b5d
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7951852222906819095}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0

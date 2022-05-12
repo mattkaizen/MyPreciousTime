@@ -35,6 +35,14 @@ public class PlayerCollision : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<GoldPlatform>().TocoUltimaGoldPlatform();
         }
+        else if (collision.CompareTag("SecuencialGold"))
+        {
+            collision.gameObject.GetComponentInParent<DynamicPlatform>().TocoPlataforma();
+        }
+        else if (collision.CompareTag("SecuencialDynamic"))
+        {
+            collision.gameObject.GetComponentInParent<SencuencialDynamic>().TocoPlataforma();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -57,6 +65,14 @@ public class PlayerCollision : MonoBehaviour
         else if (collision.CompareTag("Victoria"))
         {
             collision.gameObject.GetComponentInParent<GoldPlatform>().TocoUltimaGoldPlatform();
+        }
+        else if (collision.CompareTag("SecuencialGold"))
+        {
+            collision.gameObject.GetComponentInParent<DynamicPlatform>().TocoPlataforma();
+        }
+        else if (collision.CompareTag("SecuencialDynamic"))
+        {
+            collision.gameObject.GetComponentInParent<SencuencialDynamic>().TocoPlataforma();
         }
     }
 
