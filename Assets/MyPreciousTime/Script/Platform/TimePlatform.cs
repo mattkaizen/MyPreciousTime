@@ -12,6 +12,10 @@ public class TimePlatform : MonoBehaviour
     [SerializeField] float tiempoActivarSgtPlatf; // 5
     [SerializeField] float tiempoGoldActiva; // 1
 
+    [Header("Desactiva plataforma")]
+    [SerializeField] bool desactivaPlataforma; //
+    [SerializeField] GameObject prePlataform; //
+
     private GameManager gameManager;
 
     private int plataformaActual;
@@ -43,6 +47,10 @@ public class TimePlatform : MonoBehaviour
     {
         if (tocoPlatformaInicial && !inicioTimer)
         {
+            if(desactivaPlataforma)
+            {
+                prePlataform.SetActive(false);
+            }
             inicioTimer = true;
             //iniciarCorrutina
             StartCoroutine(Esperar5Segundos());

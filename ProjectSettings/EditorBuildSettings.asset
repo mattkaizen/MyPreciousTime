@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 3 Fase 1.unity
     guid: 02b75a430bb350646943784bcde36e6d
+  - enabled: 1
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 3 Fase 2.unity
+    guid: 2a5b6e00f35b17c4189f35e3e95b04af
+  - enabled: 1
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 3 Fase 3.unity
+    guid: f0d1ff3107aea504aafc1d00a7689fb7
   m_configObjects: {}

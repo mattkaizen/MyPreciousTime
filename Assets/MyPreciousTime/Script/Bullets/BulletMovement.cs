@@ -119,25 +119,26 @@ public class BulletMovement : MonoBehaviour
                 StartCoroutine(ActivarOtraBala());
             }
         }
-        else if (Vector3.Distance(platformRb.position, goalPosition) < minDistance)
+        else if (Vector3.Distance(platformRb.position, goalPosition) < minDistance && tipoMovimiento == 1)
         {
             current = 0;
             target = 1; //si target es igual a 0, entonces 1, sino 0.
             tipoMovimiento = 2;
 
             platformRb.position = inicialPos2;
+            Debug.Log("cambPos");
             activoMovimiento = false;
         }
-        else if (Vector3.Distance(platformRb.position, goalPosition2) < minDistance)
+        else if (Vector3.Distance(platformRb.position, goalPosition2) < minDistance && tipoMovimiento == 2)
         {
             current = 0;
             target = 1; //si target es igual a 0, entonces 1, sino 0.
             tipoMovimiento = 3;
-
+            Debug.Log("cambPos2");
             platformRb.position = inicialPos3;
             activoMovimiento = false;
         }
-        else if (Vector3.Distance(platformRb.position, goalPosition3) < minDistance)
+        else if (Vector3.Distance(platformRb.position, goalPosition3) < minDistance && tipoMovimiento == 3)
         {
             current = 0;
             target = 1; //si target es igual a 0, entonces 1, sino 0.
