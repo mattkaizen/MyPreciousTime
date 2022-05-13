@@ -6,7 +6,11 @@ public class SecuencialPlatform : MonoBehaviour
 {
     [Header("Tipo de plataforma")]
     [SerializeField] bool platInicial;
+   
     [SerializeField] float timeToActivePlatform;
+    [Header("Activa Un GO")]
+    [SerializeField] bool platActivadora;
+    [SerializeField] GameObject siguientePlataforma;
     [Space]
     [Header("Si es la plataforma inicial agregar. .")]
     [SerializeField] Animator nextPlatformAnim;
@@ -25,10 +29,16 @@ public class SecuencialPlatform : MonoBehaviour
 
     public void ActivarCorrPlataformaInicial()
     {
-        if (!plataformaInicialActivada && platInicial)
+        if (!plataformaInicialActivada && platInicial && !platActivadora)
         {
             plataformaInicialActivada = true;
             ActivarSigPlataforma(nextPlatformAnim);
+        }
+        if(!plataformaInicialActivada && platInicial && platActivadora)
+        {
+            plataformaInicialActivada = true;
+
+            StartCoroutine(ActivarPlatafGO(platformAnim));
         }
     }
 
@@ -57,13 +67,21 @@ public class SecuencialPlatform : MonoBehaviour
         thisPlatform.SetBool("Activar", false);
         thisPlatform.SetBool("Desactivar", false);
         yield return new WaitForSeconds(timeToActivePlatform);
+        if (platActivadora)
+            siguientePlataforma.SetActive(true);
         nextPlatform.SetBool("Activar", true);
         thisPlatform.SetBool("Desactivar", true);
         Debug.Log("PlataformaIniciada");
     }
 
-    IEnumerator ActivarPlataformaInicial()
+    IEnumerator ActivarPlatafGO(Animator thisPlatform)
     {
+        thisPlatform.SetBool("Activar", false);
+        thisPlatform.SetBool("Desactivar", false);
         yield return new WaitForSeconds(timeToActivePlatform);
+        if (platActivadora)
+            siguientePlataforma.SetActive(true);
+
+        thisPlatform.SetBool("Desactivar", true);
     }
 }

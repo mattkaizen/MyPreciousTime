@@ -43,6 +43,14 @@ public class PlayerCollision : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<SencuencialDynamic>().TocoPlataforma();
         }
+        else if (collision.CompareTag("Activadora"))
+        {
+            collision.gameObject.GetComponentInParent<ActivadoraPlatform>().ActivarPlatformaGO();
+        }
+        else if (collision.CompareTag("Timer"))
+        {
+            collision.gameObject.GetComponentInParent<TimePlatform>().IniciarPlatformTime();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -73,6 +81,14 @@ public class PlayerCollision : MonoBehaviour
         else if (collision.CompareTag("SecuencialDynamic"))
         {
             collision.gameObject.GetComponentInParent<SencuencialDynamic>().TocoPlataforma();
+        }
+        else if (collision.CompareTag("Activadora"))
+        {
+            collision.gameObject.GetComponentInParent<ActivadoraPlatform>().ActivarPlatformaGO();
+        }
+        else if (collision.CompareTag("Timer"))
+        {
+            collision.gameObject.GetComponentInParent<TimePlatform>().IniciarPlatformTime();
         }
     }
 

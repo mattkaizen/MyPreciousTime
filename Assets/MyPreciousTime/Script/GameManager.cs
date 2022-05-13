@@ -110,16 +110,31 @@ public class GameManager : MonoBehaviour
             case 2: //Si estoy en el nivel 1 etapa 1, carga la etapa 2
                 if (numeroDeFase == 1) //Carga el nivel 1 fase 2
                 {
-                    SceneManager.LoadScene(numeroDeFase + 3);
+                    SceneManager.LoadScene(numeroDeFase + 4);
                 }
                 else if (numeroDeFase == 2) //Carga el nivel 1 fase 3
                 {
-                    SceneManager.LoadScene(numeroDeFase + 3);
+                    SceneManager.LoadScene(numeroDeFase + 4);
                 }
                 else if (numeroDeFase == 3) //Carga el nivel 2
                 {
-                    SceneManager.LoadScene(numeroDeFase + 3);
+                    SceneManager.LoadScene(numeroDeFase + 4);
                 }
+                break;
+
+            case 3: //Si estoy en el nivel 1 etapa 1, carga la etapa 2
+                if (numeroDeFase == 1) //Carga el nivel 3 fase 2
+                {
+                    SceneManager.LoadScene(numeroDeFase + 7); //1 + 7 = 8 (escena siguiente
+                }
+                else if (numeroDeFase == 2) //Carga el nivel 3 fase 3
+                {
+                    SceneManager.LoadScene(numeroDeFase + 7);
+                }
+                //else if (numeroDeFase == 3) //Carga el nivel 2
+                //{
+                //    SceneManager.LoadScene(numeroDeFase + 7);
+                //}
                 break;
         }
     }
@@ -186,6 +201,10 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(numeroDeEscena); //Carga el nivel 1, fase 1
         }
         else if (numeroDeNivel == 2)
+        {
+            SceneManager.LoadScene(numeroDeEscena); //Carga el nivel 2, fase 1
+        }
+        else if (numeroDeNivel == 3)
         {
             SceneManager.LoadScene(numeroDeEscena); //Carga el nivel 2, fase 1
         }

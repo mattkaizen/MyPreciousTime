@@ -11,6 +11,8 @@ TagManager:
   - Victoria
   - SecuencialGold
   - SecuencialDynamic
+  - Activadora
+  - Timer
   layers:
   - Default
   - TransparentFX

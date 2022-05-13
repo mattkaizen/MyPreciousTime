@@ -11,6 +11,7 @@ public class PlatformController : MonoBehaviour
     private GameManager gameManager;
 
     private bool plataformaActiva;
+    private bool platafomaSecuencia;
 
 
     private void Awake()
@@ -22,6 +23,14 @@ public class PlatformController : MonoBehaviour
     private void Update()
     {
         if(!plataformaActiva)
+        {
+            StartCoroutine(ActivarPlataforma());
+        }
+    }
+
+    public void ActivarCorrutinaPlataforma()
+    {
+        if (!plataformaActiva)
         {
             StartCoroutine(ActivarPlataforma());
         }
