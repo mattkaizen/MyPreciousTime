@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     private bool animVictoriaInicio;
     private bool activarVictoriaJuego;
 
+    public int NumeroDeFase { get => numeroDeFase; }
+    public int NumeroDeNivel { get => numeroDeNivel; }
     public int PlataformasDoradasXNivel { get => plataformasDoradasXNivel; set => plataformasDoradasXNivel = value; }
     public int PlatfDoradasTocadas { get => platfDoradasTocadas; set => platfDoradasTocadas = value; }
     public bool ActivarVictoriaJuego { get => activarVictoriaJuego; set => activarVictoriaJuego = value; }

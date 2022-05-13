@@ -36,6 +36,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip muerteAudioClip;
     [SerializeField] AudioClip proyectilAudioClip;
     [SerializeField] List<AudioClip> listaSaltosAudioClip;
+    [SerializeField] List<AudioClip> listaGolpesAudioClip;
 
     [Header("Velocidad a disminuir la musica")]
     [SerializeField] float velocidadDisminuidor; //0.05
@@ -51,6 +52,7 @@ public class AudioController : MonoBehaviour
 
     private GameManager gameManager;
     private GoldPlatform goldPlatfom;
+    private MonstruoAnimator monstAnim;
 
 
 
@@ -79,6 +81,7 @@ public class AudioController : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         goldPlatfom = FindObjectOfType<GoldPlatform>();
+        monstAnim = FindObjectOfType<MonstruoAnimator>();
         velocidad = 30.0f;
         parametroMaster = "MasterVolume";
         parametroMusica = "MusicaVolume";
@@ -207,9 +210,62 @@ public class AudioController : MonoBehaviour
             if (!sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
             {
                 sonidoGolpeJefe = true;
-                sonidoGolpeAS.PlayOneShot(sonidoGolpeAudioClip);
+                monstAnim.ActivarAnimDaño();
+                ReproducirSonidoDeGolpePorFase(gameManager.NumeroDeNivel);
+                //sonidoGolpeAS.PlayOneShot(sonidoGolpeAudioClip);
             }
             ReproducirSonidoVictoria();
+        }
+    }
+
+    public void ReproducirSonidoDeGolpePorFase(int numNivel) //gamemanager.
+    {
+        switch(numNivel)
+        {
+            case 1:
+                if(gameManager.NumeroDeFase == 1)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[0]);
+                }
+                if (gameManager.NumeroDeFase == 2)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[1]);
+                }
+                if (gameManager.NumeroDeFase == 3)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[2]);
+                }
+                break;
+
+            case 2:
+                if (gameManager.NumeroDeFase == 1)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[3]);
+                }
+                if (gameManager.NumeroDeFase == 2)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[4]);
+                }
+                if (gameManager.NumeroDeFase == 3)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[5]);
+                }
+                break;
+
+            case 3:
+                if (gameManager.NumeroDeFase == 1)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[6]);
+                }
+                if (gameManager.NumeroDeFase == 2)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[7]);
+                }
+                if (gameManager.NumeroDeFase == 3)
+                {
+                    sonidoGolpeAS.PlayOneShot(listaGolpesAudioClip[8]);
+                }
+                break;
         }
     }
 

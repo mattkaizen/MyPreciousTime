@@ -1712,6 +1712,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &442551588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 442551589}
+  - component: {fileID: 442551592}
+  - component: {fileID: 442551591}
+  - component: {fileID: 442551590}
+  m_Layer: 5
+  m_Name: FondoEnemigo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &442551589
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442551588}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999818, y: 0.9999818, z: 0.9999818}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1885796802}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &442551590
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442551588}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90a6c621bf17077499574fe450138130, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &442551591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442551588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b39f97da9379ea9438ecdd7737923764, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &442551592
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442551588}
+  m_CullTransparentMesh: 1
 --- !u!1 &468504559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,6 +2743,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonAnimator: {fileID: 624542404}
+  nombreCondicionDeBoton: 
+  condicionAReset: 
+  botonOpcion: 0
+  condicionAReset2: 
 --- !u!114 &624542407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3741,6 +3842,20 @@ MonoBehaviour:
   sigPlataformaGO: {fileID: 844788664}
   ultimaPlatSecuencia: 0
   movimientoAutomatico: 0
+  cantidadActivarSgtPlataforma: 0
+  arrancaCentro: 0
+  nuevaPosIzquierda: {x: 0, y: 0, z: 0}
+  speedAPosCentral: 0
+  curveNueva:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minDistanceCentro: 0
+  noActivaLaDorada: 0
+  desactivaPlataformas: 0
+  plataformasADesactivar: []
 --- !u!50 &772792743
 Rigidbody2D:
   serializedVersion: 4
@@ -4764,6 +4879,20 @@ MonoBehaviour:
   sigPlataformaGO: {fileID: 777125483}
   ultimaPlatSecuencia: 1
   movimientoAutomatico: 0
+  cantidadActivarSgtPlataforma: 0
+  arrancaCentro: 0
+  nuevaPosIzquierda: {x: 0, y: 0, z: 0}
+  speedAPosCentral: 0
+  curveNueva:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minDistanceCentro: 0
+  noActivaLaDorada: 0
+  desactivaPlataformas: 0
+  plataformasADesactivar: []
 --- !u!50 &844788667
 Rigidbody2D:
   serializedVersion: 4
@@ -5217,103 +5346,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &924488415
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 924488416}
-  - component: {fileID: 924488418}
-  - component: {fileID: 924488417}
-  - component: {fileID: 924488419}
-  m_Layer: 5
-  m_Name: FondoEnemigo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &924488416
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924488415}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1885796802}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &924488417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924488415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 650331cc12e5e3241a02ec2fb296354b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &924488418
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924488415}
-  m_CullTransparentMesh: 1
---- !u!95 &924488419
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924488415}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c8032fb4c410bb4aa2a06e0f4b0d596, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &924813687
 GameObject:
   m_ObjectHideFlags: 0
@@ -5486,7 +5518,16 @@ MonoBehaviour:
   goalPosition: {x: -2, y: -12, z: 0}
   speed: 0.35
   minDistance: 0.1
-  tipoMovimimento: 0
+  cambiaPos: 0
+  inicialPos2: {x: 0, y: 0, z: 0}
+  goalPosition2: {x: 0, y: 0, z: 0}
+  inicialPos3: {x: 0, y: 0, z: 0}
+  goalPosition3: {x: 0, y: 0, z: 0}
+  speed2: 0
+  speed3: 0
+  activaOtraBala: 0
+  otraBalaGO: {fileID: 0}
+  tiempoAActivarBala: 0
 --- !u!50 &940705315
 Rigidbody2D:
   serializedVersion: 4
@@ -5812,6 +5853,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sigPlataformaGO: {fileID: 1373536440}
+  activaBala: 0
+  balasGO: {fileID: 0}
+  desactivarOtraPlatf: 0
+  prePlatafGO: {fileID: 0}
 --- !u!1 &953659213
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,7 +6987,7 @@ MonoBehaviour:
   panelCargarEscenaAnim: {fileID: 387168790}
   cameraAnim: {fileID: 1032679361}
   panelCargarVictoria: {fileID: 1011071644}
-  fondoEnemigo: {fileID: 924488419}
+  fondoEnemigo: {fileID: 0}
   textoMonstruoAnim: {fileID: 1810725224}
 --- !u!4 &1147304701
 Transform:
@@ -7164,6 +7209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonAnimator: {fileID: 1188428941}
+  nombreCondicionDeBoton: 
+  condicionAReset: 
+  botonOpcion: 0
+  condicionAReset2: 
 --- !u!114 &1188428944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7633,6 +7682,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonAnimator: {fileID: 1228476505}
+  nombreCondicionDeBoton: 
+  condicionAReset: 
+  botonOpcion: 0
+  condicionAReset2: 
 --- !u!114 &1228476507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8765,6 +8818,20 @@ MonoBehaviour:
   sigPlataformaGO: {fileID: 993850895}
   ultimaPlatSecuencia: 0
   movimientoAutomatico: 1
+  cantidadActivarSgtPlataforma: 0
+  arrancaCentro: 0
+  nuevaPosIzquierda: {x: 0, y: 0, z: 0}
+  speedAPosCentral: 0
+  curveNueva:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minDistanceCentro: 0
+  noActivaLaDorada: 0
+  desactivaPlataformas: 0
+  plataformasADesactivar: []
 --- !u!1 &1390515815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,6 +9537,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonAnimator: {fileID: 1549500398}
+  nombreCondicionDeBoton: 
+  condicionAReset: 
+  botonOpcion: 0
+  condicionAReset2: 
 --- !u!1 &1575043572
 GameObject:
   m_ObjectHideFlags: 0
@@ -10513,7 +10584,16 @@ MonoBehaviour:
   goalPosition: {x: 2, y: -12, z: 0}
   speed: 0.35
   minDistance: 0.1
-  tipoMovimimento: 0
+  cambiaPos: 0
+  inicialPos2: {x: 0, y: 0, z: 0}
+  goalPosition2: {x: 0, y: 0, z: 0}
+  inicialPos3: {x: 0, y: 0, z: 0}
+  goalPosition3: {x: 0, y: 0, z: 0}
+  speed2: 0
+  speed3: 0
+  activaOtraBala: 0
+  otraBalaGO: {fileID: 0}
+  tiempoAActivarBala: 0
 --- !u!1 &1651498447
 GameObject:
   m_ObjectHideFlags: 0
@@ -10634,6 +10714,20 @@ MonoBehaviour:
   sigPlataformaGO: {fileID: 772792740}
   ultimaPlatSecuencia: 0
   movimientoAutomatico: 0
+  cantidadActivarSgtPlataforma: 0
+  arrancaCentro: 0
+  nuevaPosIzquierda: {x: 0, y: 0, z: 0}
+  speedAPosCentral: 0
+  curveNueva:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minDistanceCentro: 0
+  noActivaLaDorada: 0
+  desactivaPlataformas: 0
+  plataformasADesactivar: []
 --- !u!50 &1651498450
 Rigidbody2D:
   serializedVersion: 4
@@ -10965,6 +11059,20 @@ MonoBehaviour:
   sigPlataformaGO: {fileID: 752540467}
   ultimaPlatSecuencia: 0
   movimientoAutomatico: 0
+  cantidadActivarSgtPlataforma: 0
+  arrancaCentro: 0
+  nuevaPosIzquierda: {x: 0, y: 0, z: 0}
+  speedAPosCentral: 0
+  curveNueva:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minDistanceCentro: 0
+  noActivaLaDorada: 0
+  desactivaPlataformas: 0
+  plataformasADesactivar: []
 --- !u!50 &1746057581
 Rigidbody2D:
   serializedVersion: 4
@@ -12088,16 +12196,26 @@ MonoBehaviour:
   sonidoInicioEscenaAS: {fileID: 676303819}
   muerteAS: {fileID: 1080029681}
   proyectilAudioSource: {fileID: 1168275522}
-  musicaNivelAudioClip: {fileID: 8300000, guid: b5893b36a2d36b64b861b7a1a011f07e, type: 3}
+  musicaNivelAudioClip: {fileID: 8300000, guid: c048d1e7b72468f4c9758335bd48ea8f, type: 3}
   musicaVictoriaAudioClip: {fileID: 8300000, guid: 9fb77543f0cf68e45ab44b66c0467e2e, type: 3}
   sonidoVictoriaAudioClip: {fileID: 8300000, guid: 1d5c88d7622b39c468d14b422bcbaed9, type: 3}
   sonidoGolpeAudioClip: {fileID: 8300000, guid: 3dce671d6b479ff4c8029d0ae259a09e, type: 3}
   sonidoCargarEscAudioClip: {fileID: 8300000, guid: 6627ec0e871f55a4fa7b918863d7f94f, type: 3}
   sonidoInicioEscAudioClip: {fileID: 8300000, guid: 5bf21dc8af304394ca223dcaee2fd40c, type: 3}
-  muerteAudioClip: {fileID: 8300000, guid: 39c9a617836d7774f9ef22d441502192, type: 3}
+  muerteAudioClip: {fileID: 8300000, guid: a5ef0cafa02be56489993b574b9f7472, type: 3}
   proyectilAudioClip: {fileID: 8300000, guid: 8c7eb4b097ae41b499ea7f19d6b32286, type: 3}
   listaSaltosAudioClip:
   - {fileID: 8300000, guid: 5bfa4a5f64a581e4dbce4aea8e547c56, type: 3}
+  listaGolpesAudioClip:
+  - {fileID: 8300000, guid: 3116ac21780a69d41b6d395ebd020c80, type: 3}
+  - {fileID: 8300000, guid: 85b112111ed224945af5a9b1bf140e3a, type: 3}
+  - {fileID: 8300000, guid: f7d24d49d5cc20f4d80c801bbfb11ed6, type: 3}
+  - {fileID: 8300000, guid: 1c03ca7b94da8b14e87cc89c74c01cc5, type: 3}
+  - {fileID: 8300000, guid: 63238882882711348a9bb262e7eca22a, type: 3}
+  - {fileID: 8300000, guid: a094026725996b444a0d14249e80309f, type: 3}
+  - {fileID: 8300000, guid: 8727e15172bd8b94cbefb79cd226174f, type: 3}
+  - {fileID: 8300000, guid: 7e8155f3af1f8aa469b1d53349cb4cf8, type: 3}
+  - {fileID: 8300000, guid: 6879e4b84aa63c247838810be49ad72c, type: 3}
   velocidadDisminuidor: 0.05
   velCorrutinaApagar: 0.1
   velCorrutinaApagarVictoria: 0
@@ -12195,7 +12313,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 924488416}
+  - {fileID: 442551589}
   - {fileID: 594361962}
   - {fileID: 1810725228}
   m_Father: {fileID: 0}
