@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Menu.unity
     guid: 0d3ed55ab2fbb5746bf6bad254958d89
+  - enabled: 0
+    path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 0.unity
+    guid: 5206aa9a0dadc854597d40447eb05044
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 1.unity
-    guid: d8f7a384fb867114192a80ff22b1d1f0
+    guid: 9db3191c6a1458d4ebbd940201ed6ceb
   - enabled: 1
     path: Assets/MyPreciousTime/Scenes/Nivel 1/Nivel 1 Fase 2.unity
     guid: 8d7289e67f7444b4db68e8b0d05a1273

@@ -15,7 +15,18 @@ public class RatonSobreBoton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] bool botonOpcion;
     [SerializeField] string condicionAReset2;
 
+    [Header("Es boton menu")]
+    [SerializeField] bool botonMenu;
 
+    private string condMenu;
+
+    private void Start()
+    {
+        if(botonMenu)
+        {
+            nombreCondicionDeBoton = "expandirBoton";
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {

@@ -90,7 +90,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4d793bfd98befc1428c2ccf869396127, type: 2}
+  m_Motion: {fileID: 7400000, guid: 82f5a4d69ea72c3408699ad3cad839c0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -177,7 +177,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ebf5561b034a4344286ca295ff7d76a8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 50155e35b2d2b3943a2d02b52394c3ea, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -214,14 +214,14 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MenuButton
+  m_Name: MenuButtonFinal
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: aparecerBoton
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: expandirBoton
     m_Type: 4
@@ -294,7 +294,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dde6e5d190a933447a1d53060ca792fd, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6d7bfc065b6463f42b60f383f72df04e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -321,7 +321,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cded8f98d6e6d4e4788cb5d0b9d2d491, type: 2}
+  m_Motion: {fileID: 7400000, guid: 59253b16785dc26478ac18eeeb1a35f8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -374,7 +374,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 19d9677daf5fde241a3003d5278e7912, type: 2}
+  m_Motion: {fileID: 7400000, guid: a2aff8fe1da46fe4e9ca52eb61df90bb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

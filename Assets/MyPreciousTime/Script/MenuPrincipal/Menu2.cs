@@ -35,17 +35,17 @@ public class Menu2 : MonoBehaviour
 
     public void CambiarFondoMenu()
     {
-        if(SaveVariables.inst.MostrarPantallaDerrota)
-        {
-            //Poner pantalla de derrota
-            fondoAnim.SetBool("Derrota", true);
-        }
+        //if(SaveVariables.inst.MostrarPantallaDerrota)
+        //{
+        //    //Poner pantalla de derrota
+        //    fondoAnim.SetBool("Derrota", true);
+        //}
 
-        else if(SaveVariables.inst.GanoElJuego)
-        {
-            //Poner pantalla de victoria
-            fondoAnim.SetBool("Victoria", true);
-        }
+        //else if(SaveVariables.inst.GanoElJuego)
+        //{
+        //    //Poner pantalla de victoria
+        //    fondoAnim.SetBool("Victoria", true);
+        //}
     }
     public void Jugar()
     {

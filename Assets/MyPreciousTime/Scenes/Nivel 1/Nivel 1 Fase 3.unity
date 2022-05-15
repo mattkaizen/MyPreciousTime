@@ -2697,6 +2697,7 @@ MonoBehaviour:
   condicionAReset: 
   botonOpcion: 0
   condicionAReset2: 
+  botonMenu: 1
 --- !u!114 &624542407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5991,6 +5992,7 @@ MonoBehaviour:
   condicionAReset: 
   botonOpcion: 0
   condicionAReset2: 
+  botonMenu: 1
 --- !u!114 &1188428944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6464,6 +6466,7 @@ MonoBehaviour:
   condicionAReset: 
   botonOpcion: 0
   condicionAReset2: 
+  botonMenu: 1
 --- !u!114 &1228476507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8118,6 +8121,7 @@ MonoBehaviour:
   condicionAReset: 
   botonOpcion: 0
   condicionAReset2: 
+  botonMenu: 1
 --- !u!1 &1575043572
 GameObject:
   m_ObjectHideFlags: 0
@@ -9940,7 +9944,7 @@ MonoBehaviour:
   muerteAudioClip: {fileID: 8300000, guid: a5ef0cafa02be56489993b574b9f7472, type: 3}
   proyectilAudioClip: {fileID: 8300000, guid: 8c7eb4b097ae41b499ea7f19d6b32286, type: 3}
   listaSaltosAudioClip:
-  - {fileID: 8300000, guid: 5bfa4a5f64a581e4dbce4aea8e547c56, type: 3}
+  - {fileID: 8300000, guid: a4fd5181f617e6c468d26bdeae6982f4, type: 3}
   listaGolpesAudioClip:
   - {fileID: 8300000, guid: 3116ac21780a69d41b6d395ebd020c80, type: 3}
   - {fileID: 8300000, guid: 85b112111ed224945af5a9b1bf140e3a, type: 3}
