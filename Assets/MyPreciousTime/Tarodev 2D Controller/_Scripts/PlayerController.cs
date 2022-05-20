@@ -38,6 +38,14 @@ public class PlayerController : MonoBehaviour, IPlayerController
     //void Awake() => Invoke(nameof(Activate), 0.5f);
     void Activate() => _active = true;
 
+    //private void Update()
+    //{
+    //    if (gameManager.JuegoActivo && !gameManager.JuegoPausado)
+    //    {
+    //        GatherInput();
+    //    }
+    //}
+
     private void Update()
     {
         if (gameManager.JuegoActivo && !gameManager.JuegoPausado)

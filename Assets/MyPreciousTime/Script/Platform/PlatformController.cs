@@ -7,6 +7,13 @@ public class PlatformController : MonoBehaviour
     [SerializeField] float timeToActivePlatform;
     [SerializeField] int estadoPlataforma;
 
+    [Header("Cambio de colores ")]
+    [SerializeField] Color colorInicial;
+    [SerializeField] Color colorFinal;
+    [SerializeField] float smoothness;
+    private float duration;
+
+    private SpriteRenderer PlataformaSpriteR;
     private Animator platformAnim;
     private GameManager gameManager;
 
@@ -18,11 +25,13 @@ public class PlatformController : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         platformAnim = GetComponent<Animator>();
+
+        PlataformaSpriteR = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if(!plataformaActiva)
+        if (!plataformaActiva)
         {
             StartCoroutine(ActivarPlataforma());
         }
@@ -47,6 +56,7 @@ public class PlatformController : MonoBehaviour
             case 1:
                 ActivarAnimacion();
                 estadoPlataforma = 0;
+                StartCoroutine(LerpColor());
                 Debug.Log("Ejecutado1");
                 break;
         }
@@ -61,6 +71,32 @@ public class PlatformController : MonoBehaviour
         platformAnim.SetBool("Activar", false);
         platformAnim.SetBool("Desactivar", true);
     }
+
+    //IEnumerator LerpColor()
+    //{
+    //    Color.Lerp(colorInicial, colorFinal, timeToActivePlatform)
+    //    yield return new WaitForSeconds(timeToActivePlatform);
+    //}
+
+
+    IEnumerator LerpColor()
+    {
+        PlataformaSpriteR.color = colorInicial;
+        duration = timeToActivePlatform;
+        float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
+        float increment = smoothness / duration; //The amount of change to apply.
+        while (progress < 1)
+        {
+            PlataformaSpriteR.color = Color.Lerp(PlataformaSpriteR.color, colorFinal, progress);
+            //bloom.color.Interp(Color.red, Color.magenta, progress);
+            progress += increment;
+            Debug.Log("Lerp");
+            yield return new WaitForSeconds(smoothness);
+        }
+    }
+
+
+
     IEnumerator ActivarPlataforma()
     {
         while (gameManager.JuegoActivo)

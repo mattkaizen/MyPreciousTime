@@ -9,7 +9,8 @@ public class SaveVariables : MonoBehaviour
     private bool ganoElJuego; //Si no gano el juego, se ve la anim de derrota en el menu principal
 
     private bool mostrarPantallaDerrota;
-
+    private bool mostrarTutorial;
+    public bool MostrarTutorial { get => mostrarTutorial; set => mostrarTutorial = value; }
     public bool MostrarPantallaDerrota { get => mostrarPantallaDerrota; set => mostrarPantallaDerrota = value; }
     public bool GanoElJuego { get => ganoElJuego; set => ganoElJuego = value; }
     private void Awake()
@@ -43,5 +44,9 @@ public class SaveVariables : MonoBehaviour
     public void ModificarValorPantallaDerrota(bool value)
     {
         inst.MostrarPantallaDerrota = value;
+    }
+    public void ActivarTutorial(bool value)
+    {
+        inst.mostrarTutorial = value;
     }
 }

@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     [Header("Animator en CanvasFondo de Nombre de monstruo ")]
     [SerializeField] Animator textoMonstruoAnim;
 
+    [Header("Tutorial")]
+    [SerializeField] Animator tutorialAnim;
+
 
 
     private PlayerCollision playerCollision;
@@ -89,6 +92,16 @@ public class GameManager : MonoBehaviour
         RastrearMuerteJugador();
         IrSiguienteEscena();
         IniciarPanelAnimVictoria();
+    }
+
+    public void MostrarAnimTutorial()
+    {
+        if (SaveVariables.inst.MostrarTutorial)
+        {
+            SaveVariables.inst.ActivarTutorial(false);
+
+            //activarAnmTuto
+        }
     }
 
     public void PasarASiguienteNivel() //Se reproduce al final de panel cargar escena
@@ -303,7 +316,16 @@ public class GameManager : MonoBehaviour
 
     public void ActivarAnimTextoMonstruo() //Se activa en la mitad del panel de inicio nivel
     {
-        textoMonstruoAnim.SetBool("Aparecer", true); //Esta anim inicia el juego
+        if (!SaveVariables.inst.MostrarTutorial)
+        {
+            textoMonstruoAnim.SetBool("Aparecer", true); //Esta anim inicia el juego
+        }
+        else
+        {
+            tutorialAnim.SetBool("Activar", true);
+            SaveVariables.inst.ActivarTutorial(false);
+
+        }
     }
     //MENU PAUSA
     //-----------------------------------------------------------------------------------------------------------------

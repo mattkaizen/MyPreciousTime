@@ -18,7 +18,16 @@ public class RatonSobreBoton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [Header("Es boton menu")]
     [SerializeField] bool botonMenu;
 
+    [Header("Reproduce Sondidos?")]
+    [SerializeField] bool tieneSonido;
+
     private string condMenu;
+    private AudioController audioController;
+
+    private void Awake()
+    {
+        audioController = FindObjectOfType<AudioController>();
+    }
 
     private void Start()
     {
@@ -31,15 +40,14 @@ public class RatonSobreBoton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         botonAnimator.SetBool(nombreCondicionDeBoton, true);
-
+        audioController.ReproducirSonidoBotonEncima();
         //menuPAudioSource.MenuPSource.PlayOneShot(menuPAudioSource.EncimaBoton);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         botonAnimator.SetBool(nombreCondicionDeBoton, false);
-
-        if(botonOpcion)
+        if (botonOpcion)
         {
             botonAnimator.SetBool(condicionAReset2, true);
         }

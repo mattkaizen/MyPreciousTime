@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TimePlatform : MonoBehaviour
 {
+    [Header("Inicia desactivada?")]
+    [SerializeField] bool iniciaDesactivada;
+
     [Header("Lista de plataformas doradas")]
     [SerializeField] List<Animator> goldPlatformsAnim;
     [SerializeField] List<GoldPlatform> goldPlatforms;
@@ -16,6 +19,7 @@ public class TimePlatform : MonoBehaviour
     [SerializeField] bool desactivaPlataforma; //
     [SerializeField] GameObject prePlataform; //
 
+    private Animator platformAnim;
     private GameManager gameManager;
 
     private int plataformaActual;
@@ -29,6 +33,13 @@ public class TimePlatform : MonoBehaviour
     {
         plataformaActual = 0;
         gameManager = FindObjectOfType<GameManager>();
+
+        platformAnim = GetComponent<Animator>();
+
+        if(iniciaDesactivada)
+        {
+            platformAnim.SetBool("Desactivar", true);
+        }
     }
     private void Update()
     {

@@ -21,6 +21,11 @@ public class SencuencialDynamic : MonoBehaviour
 
     [Header("Siguiente plataforma a activar")]
     [SerializeField] GameObject sigPlataformaGO;
+    [SerializeField] Animator sigPlataformaAnim;
+    [SerializeField] bool activaScript;
+    [SerializeField] bool activaAnim;
+    [SerializeField] SencuencialDynamic sigPlataformaSecuencial;
+
 
     [Header("Es la ultima?")]
     [SerializeField] bool ultimaPlatSecuencia;
@@ -41,6 +46,19 @@ public class SencuencialDynamic : MonoBehaviour
     [Header("Desactiva Otras Plataform")]
     [SerializeField] bool desactivaPlataformas;
     [SerializeField] List<GameObject> plataformasADesactivar;
+
+
+    [Header("Cambio de colores ")]
+    [SerializeField] Color colorInicial;
+    [SerializeField] Color colorFinal;
+    [SerializeField] float smoothness;
+
+
+    [Header("Es plat inicial ")]
+    [SerializeField] bool esInicial;
+    private float duration;
+
+    private SpriteRenderer plataformaSpriteR;
 
     private Vector3 inicialPos;
     private Vector3 posCentral;
@@ -70,8 +88,13 @@ public class SencuencialDynamic : MonoBehaviour
 
     private int cantidadIdaVuelta;
 
+    private AudioController audioController;
+
     private void Awake()
     {
+        audioController = FindObjectOfType<AudioController>();
+        plataformaSpriteR = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
         if (!esSecuencial)
         {
             current = 0;
@@ -82,6 +105,11 @@ public class SencuencialDynamic : MonoBehaviour
 
         inicialPos = platformRb.position;
         posCentral = platformRb.position;
+
+        if (!esInicial)
+        {
+            platformAnim.SetBool("Desactivar", true);
+        }
     }
 
     private void Update()
@@ -188,9 +216,22 @@ public class SencuencialDynamic : MonoBehaviour
     {
         thisPlatform.SetBool("Activar", false);
         thisPlatform.SetBool("Desactivar", false);
+        StartCoroutine(LerpColor());
         yield return new WaitForSeconds(timeToActivePlatform);
+        if(activaScript)
+        {
+            sigPlataformaSecuencial.enabled = true;
+            sigPlataformaAnim.SetBool("Desactivar", false);
+            sigPlataformaAnim.SetBool("Activar", true);
+        }
+        if(activaAnim)
+        {
+            sigPlataformaAnim.SetBool("Desactivar", false);
+            sigPlataformaAnim.SetBool("Activar", true);
+        }
         nextPlatform.SetActive(true);
         thisPlatform.SetBool("Desactivar", true);
+        thisPlatform.gameObject.SetActive(false);
     }
     private void CalcularDistanciaObjetivo()
     {
@@ -198,7 +239,7 @@ public class SencuencialDynamic : MonoBehaviour
         {
             if (Vector3.Distance(platformRb.position, goalPosition) < minDistance && !llegoPosA) //A = izquuieirda
             {
-                if(arrancaCentro && !modificoPosInicial)
+                if (arrancaCentro && !modificoPosInicial)
                 {
                     modificoPosInicial = true;
                     ModificarPosInicial();
@@ -208,7 +249,11 @@ public class SencuencialDynamic : MonoBehaviour
                 target = target == 0 ? 1 : 0; //si target es igual a 0, entonces 1, sino 0.
                 Debug.Log("Pos B");
                 if (tocoPlataforma)
+                {
                     cantidadIdaVuelta++;
+                    audioController.AumentarPitch();
+                    audioController.ReproducirSonidoToque();
+                }
             }
             else if (platformRb.position.x > goalPosition.x && !llegoPosA) //Por si se caen los fps y no calcula la distancia en ese frame
             {
@@ -231,7 +276,11 @@ public class SencuencialDynamic : MonoBehaviour
                 target = target == 0 ? 1 : 0;
                 Debug.Log("Pos A");
                 if (tocoPlataforma)
+                {
                     cantidadIdaVuelta++;
+                    audioController.AumentarPitch();
+                    audioController.ReproducirSonidoToque();
+                }
             }
             if (Vector3.Distance(platformRb.position, posCentral) < minDistanceCentro && terminoSecuencia && arrancaCentro)
             {
@@ -267,10 +316,7 @@ public class SencuencialDynamic : MonoBehaviour
 
         if(movimientoAutomatico && !inicioDesactivar && !terminoSecuencia)
         {
-            Debug.Log("target" + target);
             current = Mathf.MoveTowards(current, target, speed * Time.deltaTime);
-
-            Debug.Log("Current" + current);
 
             platformRb.MovePosition(Vector3.Lerp(inicialPos, goalPosition, curve.Evaluate(current)));
         }
@@ -302,5 +348,21 @@ public class SencuencialDynamic : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToActivePlatform);
         goldPlatformAnim.SetBool("Activar", true);
+    }
+
+    IEnumerator LerpColor()
+    {
+        plataformaSpriteR.color = colorInicial;
+        duration = timeToActivePlatform;
+        float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
+        float increment = smoothness / duration; //The amount of change to apply.
+        while (progress < 1)
+        {
+            plataformaSpriteR.color = Color.Lerp(plataformaSpriteR.color, colorFinal, progress);
+            //bloom.color.Interp(Color.red, Color.magenta, progress);
+            progress += increment;
+            Debug.Log("Lerp");
+            yield return new WaitForSeconds(smoothness);
+        }
     }
 }

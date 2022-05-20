@@ -25,6 +25,8 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioSource sonidoInicioEscenaAS;
     [SerializeField] AudioSource muerteAS;
     [SerializeField] AudioSource proyectilAudioSource;
+    [SerializeField] AudioSource toqueAudioSource;
+    [SerializeField] AudioSource botonAS;
 
     [Header("Audioclips")]
     [SerializeField] AudioClip musicaNivelAudioClip;
@@ -35,6 +37,9 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip sonidoInicioEscAudioClip;
     [SerializeField] AudioClip muerteAudioClip;
     [SerializeField] AudioClip proyectilAudioClip;
+    [SerializeField] AudioClip toqueAudioClip;
+    [SerializeField] AudioClip botonEncimaAudioClip;
+    [SerializeField] AudioClip botonClickAudioClip;
     [SerializeField] List<AudioClip> listaSaltosAudioClip;
     [SerializeField] List<AudioClip> listaGolpesAudioClip;
 
@@ -274,6 +279,24 @@ public class AudioController : MonoBehaviour
         proyectilAudioSource.PlayOneShot(proyectilAudioClip);
     }
 
+    public void AumentarPitch()
+    {
+        toqueAudioSource.pitch = toqueAudioSource.pitch + 0.25f;
+    }
+    public void ReproducirSonidoToque()
+    {
+        toqueAudioSource.PlayOneShot(toqueAudioClip);
+    }
+
+    public void ReproducirSonidoBotonEncima()
+    {
+        botonAS.PlayOneShot(botonEncimaAudioClip);
+    }
+
+    public void ReproducirSonidoBotonClick()
+    {
+        botonAS.PlayOneShot(botonClickAudioClip);
+    }
     //public void ReproducirSonidoVictoria() //Se reproduce en el update
     //{
     //    if (goldPlatfom.ActivarVictoria)
