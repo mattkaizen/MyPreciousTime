@@ -7208,9 +7208,9 @@ MonoBehaviour:
   platActivadora: 0
   siguientePlataforma: {fileID: 0}
   nextPlatformAnim: {fileID: 1390515820}
-  colorInicial: {r: 0, g: 0, b: 0, a: 0}
-  colorFinal: {r: 0, g: 0, b: 0, a: 0}
-  smoothness: 0
+  colorInicial: {r: 1, g: 1, b: 1, a: 1}
+  colorFinal: {r: 0.6509804, g: 0.41568628, b: 0.41568628, a: 1}
+  smoothness: 0.1
   iniciaActivado: 1
 --- !u!50 &993850898
 Rigidbody2D:
@@ -8645,6 +8645,7 @@ MonoBehaviour:
   panelCargarVictoria: {fileID: 1011071644}
   fondoEnemigo: {fileID: 0}
   textoMonstruoAnim: {fileID: 1810725224}
+  tutorialAnim: {fileID: 0}
 --- !u!4 &1147304701
 Transform:
   m_ObjectHideFlags: 0
@@ -14045,6 +14046,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 4444661291647884777, guid: 99b40e3c35dfd6c4ebd46c75d35ff5e8, type: 2}
+    - target: {fileID: 6432609860406773168, guid: 42303504a4fc90a43bc5178df9876bf2, type: 3}
+      propertyPath: _freeColliderIterations
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6432609860406773169, guid: 42303504a4fc90a43bc5178df9876bf2, type: 3}
       propertyPath: m_Name
       value: Player

@@ -7613,7 +7613,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1111112, y: 1.1111112}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7663,7 +7663,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e06853147e8ddde4fbb8e9922dac23cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96dfd4302e96c414e8f572d129a7602b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9298,6 +9298,7 @@ MonoBehaviour:
   panelCargarVictoria: {fileID: 1011071644}
   fondoEnemigo: {fileID: 0}
   textoMonstruoAnim: {fileID: 1810725224}
+  tutorialAnim: {fileID: 0}
 --- !u!4 &1147304701
 Transform:
   m_ObjectHideFlags: 0
@@ -11631,7 +11632,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1111112, y: 1.1111112}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11681,7 +11682,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e06853147e8ddde4fbb8e9922dac23cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96dfd4302e96c414e8f572d129a7602b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13826,6 +13827,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 4444661291647884777, guid: 99b40e3c35dfd6c4ebd46c75d35ff5e8, type: 2}
+    - target: {fileID: 6432609860406773168, guid: 42303504a4fc90a43bc5178df9876bf2, type: 3}
+      propertyPath: _freeColliderIterations
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6432609860406773169, guid: 42303504a4fc90a43bc5178df9876bf2, type: 3}
       propertyPath: m_Name
       value: Player
