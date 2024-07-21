@@ -11,8 +11,8 @@ public class MonstruoAnimator : MonoBehaviour
         monsAnim = GetComponent<Animator>();
     }
 
-    public void ActivarAnimDaño()
+    public void ActivarAnimDaÃ±o()
     {
-        monsAnim.SetBool("Dañar", true);
+        monsAnim.SetBool("DaÃ±ar", true);
     }
 }

@@ -96,7 +96,7 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        ObtenerValoresSlider();
+        //ObtenerValoresSlider();
     }
 
     void Update()
@@ -109,7 +109,7 @@ public class AudioController : MonoBehaviour
 
     private void OnDisable()
     {
-        GuardarValoresSlider();
+        //GuardarValoresSlider();
     }
 
     void GuardarValoresSlider()
@@ -215,7 +215,7 @@ public class AudioController : MonoBehaviour
             if (!sonidoGolpeJefe && !sonidoGolpeAS.isPlaying)
             {
                 sonidoGolpeJefe = true;
-                monstAnim.ActivarAnimDaño();
+                monstAnim.ActivarAnimDaÃ±o();
                 ReproducirSonidoDeGolpePorFase(gameManager.NumeroDeNivel);
                 //sonidoGolpeAS.PlayOneShot(sonidoGolpeAudioClip);
             }
